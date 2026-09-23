@@ -454,14 +454,15 @@
               <div class="audit-item"><b>Responsive quality</b><span>Does mobile feel designed?</span></div>
               <div class="audit-item"><b>Implementation</b><span>Can I fix or rebuild it? Yes.</span></div>
             </div>
-            <form class="audit-form" id="auditForm">
-              <label for="auditUrl">Your website URL</label>
-              <div class="audit-input-row">
-                <input id="auditUrl" type="text" inputmode="url" autocomplete="url" placeholder="yourwebsite.com" required />
-                <button class="btn primary magnetic" type="submit">Get my FREE audit — $0 ↗</button>
+            <div class="audit-form">
+              <label>Send me your website</label>
+              <div class="buttons" style="margin-top:10px">
+                <a class="btn primary magnetic" href="https://www.threads.com/@sapthordev" target="_blank" rel="noopener">Message on Threads ↗</a>
+                <a class="btn secondary magnetic" href="https://t.me/Sapthor_Dev" target="_blank" rel="noopener">Message on Telegram ↗</a>
+                <a class="btn secondary magnetic" href="https://bsky.app/profile/sapthor.bsky.social" target="_blank" rel="noopener">Message on Bluesky ↗</a>
               </div>
-              <p class="audit-note"><b>Yes, it is completely free.</b> Gmail opens with your URL already included; you only need to press Send.</p>
-            </form>
+              <p class="audit-note"><b>Fastest:</b> send your URL in a DM. Prefer email? <a href="mailto:sapthor.dev@gmail.com">sapthor.dev@gmail.com</a></p>
+            </div>
           </div>
         </div>
       </section>
@@ -472,10 +473,11 @@
           <h2>Have a website, product or weird idea?</h2>
           <p>Send me the site, the problem or even the rough idea. I can design from scratch, improve what already exists, or build the product around the workflow you actually need.</p>
           <div class="buttons" style="margin-top:26px">
-            <a class="btn primary magnetic email-btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=sapthor.dev%40gmail.com&su=Project%20inquiry%20for%20Sapthor%20Dev" target="_blank" rel="noopener">Email Sapthor Dev ↗</a>
-            <a class="btn secondary magnetic" href="https://www.threads.com/@sapthordev" target="_blank" rel="noopener">Message me on Threads ↗</a>
-            <a class="btn secondary magnetic" href="https://bsky.app/profile/sapthor.bsky.social" target="_blank" rel="noopener">Find me on Bluesky ↗</a>
+            <a class="btn primary magnetic" href="https://www.threads.com/@sapthordev" target="_blank" rel="noopener">Message me on Threads ↗</a>
+            <a class="btn secondary magnetic" href="https://t.me/Sapthor_Dev" target="_blank" rel="noopener">Message me on Telegram ↗</a>
+            <a class="btn secondary magnetic" href="https://bsky.app/profile/sapthor.bsky.social" target="_blank" rel="noopener">Message me on Bluesky ↗</a>
           </div>
+          <p class="audit-note" style="margin-top:14px!important">Prefer email? <a href="mailto:sapthor.dev@gmail.com">sapthor.dev@gmail.com</a></p>
         </div>
       </section>
 
@@ -602,16 +604,6 @@
       card.addEventListener('mouseleave',()=>card.style.transform='');
     });
 
-    const auditForm=document.getElementById('auditForm');
-    auditForm.addEventListener('submit',e=>{
-      e.preventDefault();
-      const url=document.getElementById('auditUrl').value.trim();
-      if(!url)return;
-      const subject='Free 3-Point Website Audit';
-      const body='Hi Sapthor Dev,\n\nI would like the free 3-point website audit.\n\nWebsite: '+url+'\n\nThanks.';
-      const gmail='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent('sapthor.dev@gmail.com')+'&su='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
-      window.open(gmail,'_blank','noopener');
-    });
   </script>
 </body>
 </html>
