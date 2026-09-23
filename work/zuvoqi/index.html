@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zuvoqi — Sapthor Dev Case Study</title>
+  <meta name="description" content="Zuvoqi case study by Sapthor Dev." />
+  <link rel="stylesheet" href="../../case-study.css" />
+</head>
+<body>
+  <header class="top"><div class="wrap"><nav>
+    <a class="brand" href="../../">Sapthor Dev</a>
+    <div class="nav-actions"><a class="back" href="../../#work">← Back to work</a><button class="theme" id="themeBtn" aria-label="Toggle theme">◐</button></div>
+  </nav></div></header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow mono">Social product / Case study</div>
+      <h1>Zuvoqi</h1>
+      <p class="lead">A social product built around curiosity, guesses and delayed reveals — with a product loop that gives people a reason to come back.</p>
+      <div class="meta mono"><span>Product design</span><span>UX states</span><span>Security thinking</span><span>Social mechanics</span></div>
+    </section>
+
+    <section class="grid">
+      <article class="block"><div class="num mono">01 / PROBLEM</div><h2>What needed solving</h2><p>Most social interactions resolve immediately. This concept needed a clear way to create curiosity now while preserving a reason to return later.</p></article>
+      <article class="block"><div class="num mono">02 / BUILD</div><h2>What I built</h2><p>I designed the Mystery → guess → sealed truth → reveal flow and built the surrounding states, access rules and interactions around that mechanic.</p></article>
+      <article class="block"><div class="num mono">03 / VALUE</div><h2>What this demonstrates</h2><p>It demonstrates product thinking beyond screens: user loops, state design, timing, edge cases and the logic behind the experience.</p></article>
+    </section>
+
+    <section class="proof">
+      <div class="eyebrow mono">Proof of thinking</div>
+      <h2>Not just a screenshot.</h2>
+      <div class="proof-list"><div><b>Distinct product loop</b><span>The core interaction is not a standard feed or like mechanic.</span></div><div><b>State-heavy UX</b><span>Guessing, waiting and revealing each require different interface states.</span></div><div><b>Return behavior</b><span>The delayed reveal creates a natural reason to revisit.</span></div><div><b>System thinking</b><span>The product combines interface, rules and timing rather than isolated pages.</span></div></div>
+    </section>
+
+    <section class="cta">
+      <div class="eyebrow mono">Have a similar problem?</div>
+      <h2>I can design the interface and build the working system.</h2>
+      <p>Start with a project message, or send your current website for a free 3-point audit.</p>
+      <div class="btns">
+        <a class="btn primary" href="https://mail.google.com/mail/?view=cm&fs=1&to=sapthor.dev%40gmail.com&su=Project%20inquiry%20for%20Sapthor%20Dev" target="_blank" rel="noopener">Email Sapthor Dev ↗</a>
+        <a class="btn" href="../../#proof">Free website audit ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap mono">© 2026 SAPTHOR DEV · CASE STUDY</div></footer>
+  <script>
+    const root=document.documentElement,btn=document.getElementById('themeBtn');
+    const saved=localStorage.getItem('sapthor-theme'); if(saved) root.dataset.theme=saved;
+    btn.addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';localStorage.setItem('sapthor-theme',root.dataset.theme)});
+  </script>
+</body>
+</html>
