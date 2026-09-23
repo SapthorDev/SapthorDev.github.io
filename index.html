@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#08090c" />
   <title>Sapthor Dev — Websites, Products & Digital Systems</title>
-  <meta name="description" content="Custom websites, web products, automation and digital systems by Sapthor Dev. Explore interactive demos, real product work, and request a free 3-point website audit." />
+  <meta name="description" content="I design and build custom websites, web products, tools and digital systems. Sapthor Dev is where product design, engineering and experimentation meet." />
   <style>
     :root{
       --bg:#08090c;--bg2:#0d0f14;--panel:#10131a;--panel2:#151922;--text:#f4f5f7;--muted:#8f98a8;
@@ -120,61 +120,6 @@
     .audit-card h3{font-size:28px;margin:0 0 10px;letter-spacing:-1px}.audit-card>p{color:var(--muted);margin-top:0}
     .audit-list{display:grid;gap:9px;margin-top:28px}.audit-item{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--line);font-size:13px}.audit-item span{color:var(--muted)}
 
-
-    .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-    .hero-free-note{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:14px;color:var(--muted);font-size:10px;letter-spacing:.4px}
-    .hero-free-note strong{color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 35%,var(--line));padding:4px 7px;border-radius:999px}
-    .hero-free-note span:before{content:"✓";color:var(--accent);margin-right:5px}
-    .kicker strong{color:var(--accent);font-weight:800}
-    .case-open{appearance:none;border:0;background:transparent;color:var(--text);font:inherit;font-size:10px;cursor:pointer;padding:5px 0;white-space:nowrap}
-    .case-open:hover{color:var(--accent)}
-    .lab-head-actions{margin-top:18px}
-    .lab-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-    .lab-card{grid-column:span 6;border:1px solid var(--line);border-radius:28px;background:linear-gradient(145deg,color-mix(in srgb,var(--panel) 94%,transparent),color-mix(in srgb,var(--panel2) 86%,transparent));padding:24px;overflow:hidden;min-height:370px;position:relative}
-    .lab-card.wide{grid-column:span 12;min-height:500px}
-    .lab-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:12px}
-    .lab-card h3{font-size:26px;letter-spacing:-1.1px;margin:5px 0 0}.lab-copy{color:var(--muted);font-size:14px;margin:0 0 22px;max-width:760px}
-    .lab-index{font-size:9px;letter-spacing:1.4px;color:var(--accent)}.lab-badge{font-size:9px;color:var(--muted);border:1px solid var(--line);padding:6px 8px;border-radius:999px}
-    .demo-controls{display:flex;gap:7px;flex-wrap:wrap;margin:16px 0}.demo-controls.compact{margin:0}
-    .demo-btn{appearance:none;border:1px solid var(--line);background:var(--panel2);color:var(--muted);padding:8px 10px;border-radius:10px;font-size:11px;cursor:pointer}
-    .demo-btn:hover,.demo-btn.active{color:var(--text);border-color:color-mix(in srgb,var(--accent) 55%,var(--line));background:color-mix(in srgb,var(--accent) 8%,var(--panel2))}
-    .before-after{height:330px;border:1px solid var(--line);border-radius:20px;position:relative;overflow:hidden;background:var(--bg);margin-top:22px}
-    .mock-site{position:absolute;inset:0;padding:18px}.mock-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:10px}
-    .mock-bad{background:#f4f0e7;color:#252525;font-family:Arial,sans-serif}.mock-bad .mock-nav{background:#b9d6ff;padding:10px;margin:-18px -18px 0}
-    .mock-bad-body{padding:28px 8px}.mock-bad-body h4{font-size:34px;letter-spacing:1px;margin:0 0 8px;color:#8c1e1e}.mock-bad-body p{max-width:560px;color:#333}
-    .mock-bad-buttons{display:flex;gap:8px;flex-wrap:wrap}.mock-bad-buttons i{font-style:normal;background:#d84a3a;color:white;padding:9px 11px;font-size:10px;border-radius:2px}
-    .mock-bad-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:30px}.mock-bad-grid b{height:70px;background:#d8d0c1;border:2px solid #8c8c8c}
-    .after-layer{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--split)) 0 0);transition:clip-path .05s linear}
-    .mock-good{background:linear-gradient(145deg,#0b0e13,#111722);color:#f5f7f8;padding:20px 24px}.mock-good .mock-nav i{font-style:normal;background:#e8ff5f;color:#0a0d0f;padding:8px 10px;border-radius:999px}
-    .mock-good-body{padding:50px 4px 0}.mock-kicker{font:9px ui-monospace,monospace;color:#91a0b7;letter-spacing:1.4px}.mock-good-body h4{font-size:46px;line-height:.95;letter-spacing:-2.5px;margin:12px 0}.mock-good-body p{max-width:440px;color:#9ea9b8}
-    .mock-cta{display:inline-block;margin-top:12px;background:#e8ff5f;color:#0a0d0f;padding:10px 12px;border-radius:12px;font-style:normal;font-weight:800;font-size:11px}
-    .ba-divider{position:absolute;top:0;bottom:0;left:var(--split);width:1px;background:white;box-shadow:0 0 0 1px rgba(0,0,0,.18);pointer-events:none}.ba-divider span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:white;color:#0c0f13;font-size:14px}
-    .ba-range{width:100%;accent-color:var(--accent);margin-top:14px}
-    .device-shell{height:270px;display:grid;place-items:center;border:1px solid var(--line);border-radius:18px;background:var(--bg);padding:16px;overflow:hidden}
-    .device-frame{height:226px;width:100%;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow:hidden;transition:width .35s ease;box-shadow:0 20px 50px rgba(0,0,0,.2)}
-    .device-frame[data-size="tablet"]{width:72%}.device-frame[data-size="mobile"]{width:42%}
-    .mini-browser{height:26px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:5px;padding:0 8px}.mini-browser span{width:5px;height:5px;border-radius:50%;background:var(--muted);opacity:.5}.mini-browser i{font-style:normal;font-size:7px;color:var(--muted);margin-left:6px}
-    .mini-layout{height:calc(100% - 26px);display:grid;grid-template-columns:1.25fr .75fr;gap:12px;padding:18px}.mini-layout small{font-size:7px;color:var(--accent)}.mini-layout h4{font-size:24px;line-height:.95;letter-spacing:-1px;margin:8px 0}.mini-layout p{font-size:9px;color:var(--muted);margin:0 0 12px}.mini-layout b{font-size:8px;background:var(--text);color:var(--bg);padding:7px 8px;border-radius:8px}.mini-layout aside{display:grid;gap:7px}.mini-layout aside i{display:block;border-radius:8px;background:linear-gradient(145deg,var(--soft),var(--panel2));border:1px solid var(--line)}
-    .device-frame[data-size="mobile"] .mini-layout{grid-template-columns:1fr;padding:12px}.device-frame[data-size="mobile"] .mini-layout aside{display:none}.device-frame[data-size="mobile"] .mini-layout h4{font-size:19px}
-    .flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;align-items:center;gap:6px;margin:42px 0 20px}.flow>i{font-style:normal;color:var(--muted)}
-    .flow-node{border:1px solid var(--line);border-radius:14px;padding:12px;min-width:0;transition:.25s;background:var(--panel2)}.flow-node span{display:block;font-size:8px;color:var(--muted)}.flow-node b{display:block;margin:5px 0 1px;font-size:13px}.flow-node small{font-size:8px;color:var(--muted)}
-    .flow-node.active{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 10%,transparent)}.flow-node.done{background:color-mix(in srgb,var(--accent) 8%,var(--panel2));border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
-    .flow-log{border-top:1px solid var(--line);padding-top:13px;color:var(--muted);font-size:10px}
-    .dash-demo{border:1px solid var(--line);border-radius:18px;padding:16px;background:var(--bg);margin-top:28px}.dash-metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px}.dash-metrics>div{border:1px solid var(--line);border-radius:13px;padding:12px;background:var(--panel)}.dash-metrics small,.dash-metrics span{display:block;color:var(--muted);font-size:8px}.dash-metrics strong{font-size:24px;letter-spacing:-1px}
-    .bar-chart{height:130px;display:flex;align-items:end;gap:7px;padding:18px 4px 0}.bar-chart i{flex:1;min-width:6px;border-radius:5px 5px 1px 1px;background:linear-gradient(to top,var(--accent2),var(--accent));transition:height .35s ease;opacity:.82}
-    .locale-demo{border:1px solid var(--line);border-radius:18px;padding:18px;background:var(--bg);margin-top:28px;min-height:238px;transition:.25s}.locale-nav{display:flex;justify-content:space-between;gap:12px;font-size:9px;margin-bottom:38px}.locale-nav span{color:var(--muted)}.locale-demo>small{font-size:8px;color:var(--accent);letter-spacing:1.1px}.locale-demo h4{font-size:26px;line-height:1.05;letter-spacing:-1px;margin:8px 0}.locale-demo p{font-size:11px;color:var(--muted);max-width:440px}.locale-demo button{border:0;background:var(--text);color:var(--bg);padding:8px 10px;border-radius:9px;font-size:9px;font-weight:800}.locale-demo[dir="rtl"]{text-align:right}
-    .audit-mini-cta{margin-top:18px;font-size:12px}
-    .audit-offer{border:1px solid color-mix(in srgb,var(--accent) 35%,var(--line));border-radius:34px;padding:46px;display:grid;grid-template-columns:1.05fr .95fr;gap:46px;background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 6%,var(--panel)),var(--panel));position:relative;overflow:hidden}
-    .audit-glow{position:absolute;width:520px;height:520px;border-radius:50%;right:-220px;top:-260px;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 22%,transparent),transparent 70%);pointer-events:none}
-    .free-badge{display:inline-flex;width:max-content;max-width:100%;font-size:9px;letter-spacing:1.2px;color:#07100d;background:var(--accent);padding:7px 10px;border-radius:999px;margin-bottom:24px;font-weight:900}
-    .audit-copy h2{font-size:clamp(38px,4.8vw,64px);line-height:.98;letter-spacing:-3px;margin:12px 0 18px}.audit-copy>p{color:var(--muted);font-size:16px;max-width:650px}
-    .audit-proof{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}.audit-proof span{font-size:9px;border:1px solid var(--line);border-radius:999px;padding:7px 9px;color:var(--muted)}
-    .audit-form{align-self:center;border:1px solid var(--line);border-radius:24px;padding:24px;background:color-mix(in srgb,var(--bg) 72%,transparent);position:relative;z-index:2}.audit-form label{font-weight:800;font-size:13px}.audit-input-row{display:grid;grid-template-columns:1fr auto;gap:9px;margin:10px 0}.audit-input-row input{min-width:0;border:1px solid var(--line);background:var(--panel);color:var(--text);padding:14px;border-radius:14px;outline:none;font:inherit}.audit-input-row input:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 10%,transparent)}.audit-form>p{font-size:11px;color:var(--muted);margin:10px 0 20px}
-    .audit-zero{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:16px}.audit-zero b{font-size:36px;letter-spacing:-2px;color:var(--accent)}.audit-zero span{font-size:9px;color:var(--muted);line-height:1.5}.audit-email{display:inline-block;margin-top:16px;color:var(--muted);font-size:9px}.audit-email:hover{color:var(--text)}
-    .case-modal{position:fixed;inset:0;display:none;place-items:center;padding:20px;background:rgba(0,0,0,.64);backdrop-filter:blur(10px);z-index:150}.case-modal.open{display:grid}.case-box{width:min(900px,100%);max-height:min(720px,90vh);overflow:auto;border:1px solid var(--line);border-radius:28px;background:var(--panel);box-shadow:var(--shadow);padding:28px}.case-top{display:flex;justify-content:space-between;align-items:center}.case-box h2{font-size:clamp(40px,6vw,70px);letter-spacing:-3px;line-height:.95;margin:12px 0}.case-lead{color:var(--muted);font-size:16px;max-width:700px}.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}.case-grid>div{border-top:1px solid var(--line);padding:18px 4px}.case-grid span{font-size:9px;color:var(--accent)}.case-grid p{color:var(--muted);font-size:13px}.case-foot{border-top:1px solid var(--line);padding-top:16px;margin-top:16px;font-size:9px;color:var(--muted)}
-    .dev-panel{position:fixed;right:18px;bottom:18px;width:260px;border:1px solid color-mix(in srgb,var(--accent) 45%,var(--line));border-radius:18px;background:color-mix(in srgb,var(--panel) 92%,transparent);backdrop-filter:blur(14px);box-shadow:var(--shadow);padding:15px;z-index:140;display:none}.dev-panel.open{display:block}.dev-panel>div{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;color:var(--accent);font-size:10px}.dev-panel button{border:0;background:transparent;color:var(--muted);cursor:pointer}.dev-panel p{display:flex;justify-content:space-between;gap:12px;margin:7px 0;font-size:9px}.dev-panel p span{color:var(--muted)}.dev-panel p b{color:var(--text);font-weight:600}
-    body.dev-mode section{outline:1px dashed color-mix(in srgb,var(--accent) 25%,transparent);outline-offset:-1px}body.dev-mode .wrap{outline:1px dashed color-mix(in srgb,var(--accent2) 18%,transparent)}
-
     .cta{border:1px solid var(--line);border-radius:32px;padding:48px;position:relative;overflow:hidden;background:var(--panel)}
     .cta:after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-170px;top:-210px;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 18%,transparent),transparent 70%)}
     .cta h2{font-size:clamp(42px,6vw,78px);line-height:.96;letter-spacing:-4px;margin:0 0 18px;max-width:850px}.cta p{color:var(--muted);max-width:720px;font-size:17px}
@@ -199,9 +144,6 @@
       .project,.project.large,.project.small{grid-column:span 12}
       .cap-grid{grid-template-columns:1fr 1fr}
       .proof{grid-template-columns:1fr}
-      .lab-card,.lab-card.wide{grid-column:span 12}
-      .audit-offer{grid-template-columns:1fr;gap:28px;padding:34px}
-      .case-grid{grid-template-columns:1fr}
       h1{letter-spacing:-3.4px}
       .cta{padding:34px}
       section{padding:76px 0}
@@ -254,7 +196,6 @@
       .tag{font-size:8.5px;letter-spacing:1px;padding:5px 7px;max-width:76%}
       .status{font-size:9px}
       .project h3{font-size:29px;letter-spacing:-1.2px;margin:42px 0 8px}
-      .lab-card{padding:19px;border-radius:22px;min-height:0}.lab-card.wide{min-height:0}.lab-card h3{font-size:22px}.before-after{height:270px}.mock-good-body{padding-top:34px}.mock-good-body h4{font-size:34px}.mock-bad-body h4{font-size:25px}.mock-bad-grid{grid-template-columns:1fr 1fr}.device-frame[data-size="tablet"]{width:82%}.device-frame[data-size="mobile"]{width:72%}.flow{grid-template-columns:1fr;gap:6px;margin-top:24px}.flow>i{transform:rotate(90deg);justify-self:center}.audit-offer{padding:24px 19px;border-radius:24px}.audit-copy h2{font-size:38px;letter-spacing:-2px}.audit-input-row{grid-template-columns:1fr}.audit-input-row .btn{width:100%;justify-content:center}.audit-proof{display:grid}.case-box{padding:20px;border-radius:22px}.case-box h2{letter-spacing:-2px}.dev-panel{left:12px;right:12px;bottom:12px;width:auto}
       .project p{font-size:14px;line-height:1.6}
       .project-foot{position:static;margin-top:28px;font-size:9px;gap:10px}
       .project-foot span:first-child{max-width:85%;line-height:1.45}
@@ -308,10 +249,10 @@
           <span>Sapthor Dev<small>Independent digital builder</small></span>
         </a>
         <div class="navlinks">
-          <a href="#work">Work</a><a href="#lab">Lab</a><a href="#capabilities">Capabilities</a>
+          <a href="#work">Work</a><a href="#capabilities">Capabilities</a><a href="#proof">How I work</a>
           <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">◐</button>
           <button class="icon-btn mono" id="cmdBtn" aria-label="Open command menu">⌘K</button>
-          <a class="nav-cta" href="#audit">Free website audit ↗</a>
+          <a class="nav-cta" href="#contact">Start a project ↗</a>
         </div>
       </nav>
     </div>
@@ -321,14 +262,13 @@
     <div class="wrap">
       <section class="hero">
         <div>
-          <div class="kicker"><span class="pulse"></span><span>Available for selected website & product work · <strong>Free website audit available</strong></span></div>
+          <div class="kicker"><span class="pulse"></span><span>Available for selected website & product work</span></div>
           <h1>I design it.<br>I build it.<br><span class="outline">I make it work.</span></h1>
           <p class="hero-copy">I’m the person behind Sapthor Dev. I build <b>high-end websites, web products, browser tools, AI workflows and custom digital systems</b> — from idea and interface to working implementation.</p>
           <div class="buttons">
-            <a class="btn primary magnetic" href="#audit">Get a FREE 3-point audit <span>↗</span></a>
+            <a class="btn primary magnetic" href="#contact">Show me your project <span>↗</span></a>
             <a class="btn secondary magnetic" href="#work">Explore what I build <span>↓</span></a>
           </div>
-          <div class="hero-free-note mono"><strong>100% FREE</strong><span>No call required</span><span>Send only your website URL</span></div>
           <div class="hero-meta mono"><span>Design + development</span><span>Real products</span><span>No template thinking</span></div>
         </div>
 
@@ -362,126 +302,32 @@
             <div class="project-top"><span class="tag">B2B / Web design + system</span><span class="status">Built</span></div>
             <h3>PartCortex</h3>
             <p>A bilingual RTL/LTR B2B procurement experience with technical catalog, filtering, comparisons, sourcing requests, private quotations, approvals and order flow.</p>
-            <div class="project-foot mono"><span>UX · UI · FRONTEND · WORKFLOW</span><button class="case-open" type="button" data-case="partcortex">Case study ↗</button></div>
+            <div class="project-foot mono"><span>UX · UI · FRONTEND · WORKFLOW</span><span class="arrow">↗</span></div>
           </article>
           <article class="project small interactive-card" data-nexa="A social mechanic that depends on curiosity, not Likes.">
             <div class="project-top"><span class="tag">Social product</span><span class="status">Building</span></div>
             <h3>Zuvoqi</h3>
             <p>Mysteries, guesses, sealed truths and delayed reveals — designed around a reason to come back.</p>
-            <div class="project-foot mono"><span>PRODUCT · SECURITY · UX</span><button class="case-open" type="button" data-case="zuvoqi">Case study ↗</button></div>
+            <div class="project-foot mono"><span>PRODUCT · SECURITY · UX</span><span class="arrow">↗</span></div>
           </article>
           <article class="project small interactive-card" data-nexa="Small freelancer pain. Focused product.">
             <div class="project-top"><span class="tag">SaaS</span><span class="status">Building</span></div>
             <h3>Rivuna</h3>
             <p>Structured client feedback, revision limits and paid extra rounds for freelancers.</p>
-            <div class="project-foot mono"><span>SAAS · PAYMENTS · CLIENT FLOW</span><button class="case-open" type="button" data-case="rivuna">Case study ↗</button></div>
+            <div class="project-foot mono"><span>SAAS · PAYMENTS · CLIENT FLOW</span><span class="arrow">↗</span></div>
           </article>
           <article class="project large interactive-card" data-nexa="This one turns messy local prospecting into a decision flow.">
             <div class="project-top"><span class="tag">Chrome extension</span><span class="status">Active</span></div>
             <h3>LLI</h3>
             <p>Discover → verify → enrich → score. A Chrome extension for prioritizing local business opportunities with evidence instead of dumping raw leads.</p>
-            <div class="project-foot mono"><span>EXTENSION · DATA · SCORING · UX</span><button class="case-open" type="button" data-case="lli">Case study ↗</button></div>
-          </article>
-        </div>
-      </section>
-
-
-      <section id="lab">
-        <div class="section-head">
-          <div><div class="eyebrow mono">02 / Sapthor Lab</div><h2 class="section-title">Don’t take my word for it.<br>Try the work.</h2></div>
-          <div>
-            <p class="section-sub">This is the experimental part of the portfolio: responsive UI, redesign thinking, automation, data interfaces, RTL/LTR and a live developer mode — all running inside this page.</p>
-            <div class="lab-head-actions"><button class="btn secondary" type="button" id="devModeBtn">Enter developer mode <span>⌘</span></button></div>
-          </div>
-        </div>
-
-        <div class="lab-grid">
-          <article class="lab-card wide interactive-card" data-nexa="A redesign should make the improvement obvious before anyone reads a case study.">
-            <div class="lab-card-head"><div><span class="lab-index mono">LAB / 01</span><h3>Before → After redesign</h3></div><span class="lab-badge mono">DRAG IT</span></div>
-            <p class="lab-copy">A deliberately weak landing page on the left. A clearer hierarchy, stronger CTA and cleaner visual system on the right.</p>
-            <div class="before-after" id="beforeAfter" style="--split:52%">
-              <div class="mock-site mock-bad" aria-hidden="true">
-                <div class="mock-nav"><span>LOGO</span><span>Home&nbsp;&nbsp; About&nbsp;&nbsp; Contact&nbsp;&nbsp; Services&nbsp;&nbsp; More</span></div>
-                <div class="mock-bad-body">
-                  <h4>WELCOME TO OUR WEBSITE!!!</h4>
-                  <p>We provide the best quality services for everyone. Click below to learn more about everything we do.</p>
-                  <div class="mock-bad-buttons"><i>CLICK HERE</i><i>LEARN MORE</i><i>CONTACT</i></div>
-                  <div class="mock-bad-grid"><b></b><b></b><b></b><b></b></div>
-                </div>
-              </div>
-              <div class="after-layer" aria-hidden="true">
-                <div class="mock-site mock-good">
-                  <div class="mock-nav"><strong>NORTH/CO</strong><span>Services&nbsp;&nbsp; Work&nbsp;&nbsp; About</span><i>Start a project ↗</i></div>
-                  <div class="mock-good-body">
-                    <span class="mock-kicker">STRATEGY · DESIGN · BUILD</span>
-                    <h4>Make the first<br>impression count.</h4>
-                    <p>A focused message, deliberate hierarchy and one clear next step.</p>
-                    <i class="mock-cta">See what we build ↗</i>
-                  </div>
-                </div>
-              </div>
-              <div class="ba-divider" aria-hidden="true"><span>↔</span></div>
-            </div>
-            <label class="sr-only" for="redesignRange">Compare before and after redesign</label>
-            <input class="ba-range" id="redesignRange" type="range" min="12" max="88" value="52" />
-          </article>
-
-          <article class="lab-card half interactive-card" data-nexa="Responsive work is not shrinking desktop. Each size gets its own decisions.">
-            <div class="lab-card-head"><div><span class="lab-index mono">LAB / 02</span><h3>Responsive preview</h3></div><span class="lab-badge mono">LIVE</span></div>
-            <div class="demo-controls" role="group" aria-label="Preview size">
-              <button class="demo-btn active" type="button" data-device="desktop">Desktop</button>
-              <button class="demo-btn" type="button" data-device="tablet">Tablet</button>
-              <button class="demo-btn" type="button" data-device="mobile">Mobile</button>
-            </div>
-            <div class="device-shell">
-              <div class="device-frame" id="deviceFrame" data-size="desktop">
-                <div class="mini-browser"><span></span><span></span><span></span><i>client-site.dev</i></div>
-                <div class="mini-layout">
-                  <div><small>PRODUCT STUDIO</small><h4>Built for the next click.</h4><p>Responsive layouts should feel designed at every breakpoint.</p><b>Start project ↗</b></div>
-                  <aside><i></i><i></i><i></i></aside>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="lab-card half interactive-card" data-nexa="A good automation makes the system understandable, not mysterious.">
-            <div class="lab-card-head"><div><span class="lab-index mono">LAB / 03</span><h3>Automation flow</h3></div><button class="demo-btn" type="button" id="runFlow">Run workflow</button></div>
-            <p class="lab-copy">A tiny example of turning a manual lead process into a visible workflow.</p>
-            <div class="flow" id="flowDemo">
-              <div class="flow-node"><span>01</span><b>Lead</b><small>received</small></div><i>→</i>
-              <div class="flow-node"><span>02</span><b>Validate</b><small>website + data</small></div><i>→</i>
-              <div class="flow-node"><span>03</span><b>Score</b><small>opportunity</small></div><i>→</i>
-              <div class="flow-node"><span>04</span><b>Notify</b><small>next action</small></div>
-            </div>
-            <div class="flow-log mono" id="flowLog">READY / waiting for run</div>
-          </article>
-
-          <article class="lab-card half interactive-card" data-nexa="Dashboards are about signal, hierarchy and useful states — not just charts.">
-            <div class="lab-card-head"><div><span class="lab-index mono">LAB / 04</span><h3>Data interface</h3></div><div class="demo-controls compact"><button class="demo-btn active" type="button" data-range="7">7D</button><button class="demo-btn" type="button" data-range="30">30D</button><button class="demo-btn" type="button" data-range="90">90D</button></div></div>
-            <div class="dash-demo">
-              <div class="dash-metrics"><div><small>Qualified</small><strong id="metricQualified">64</strong><span>+18%</span></div><div><small>Conversion</small><strong id="metricConversion">12.8%</strong><span>live demo</span></div></div>
-              <div class="bar-chart" id="barChart" aria-label="Demo analytics chart">
-                <i style="height:28%"></i><i style="height:46%"></i><i style="height:39%"></i><i style="height:68%"></i><i style="height:57%"></i><i style="height:82%"></i><i style="height:72%"></i>
-              </div>
-            </div>
-          </article>
-
-          <article class="lab-card half interactive-card" data-nexa="RTL is a layout problem as much as a translation problem.">
-            <div class="lab-card-head"><div><span class="lab-index mono">LAB / 05</span><h3>LTR ↔ RTL interface</h3></div><button class="demo-btn" type="button" id="rtlToggle">Switch to RTL</button></div>
-            <div class="locale-demo" id="localeDemo" dir="ltr">
-              <div class="locale-nav"><strong>PART/CO</strong><span id="localeNav">Catalog&nbsp;&nbsp; Requests&nbsp;&nbsp; Account</span></div>
-              <small id="localeKicker">PROCUREMENT WORKSPACE</small>
-              <h4 id="localeTitle">Request the right part.<br>Keep the process clear.</h4>
-              <p id="localeCopy">Add specifications, technical files and quantities in one structured request.</p>
-              <button type="button" id="localeCta">Create sourcing request ↗</button>
-            </div>
+            <div class="project-foot mono"><span>EXTENSION · DATA · SCORING · UX</span><span class="arrow">↗</span></div>
           </article>
         </div>
       </section>
 
       <section id="capabilities">
         <div class="section-head">
-          <div><div class="eyebrow mono">03 / Range</div><h2 class="section-title">One person.<br>Several disciplines.</h2></div>
+          <div><div class="eyebrow mono">02 / Range</div><h2 class="section-title">One person.<br>Several disciplines.</h2></div>
           <p class="section-sub">The point isn’t to use every technology in every project. It’s being able to move across design, code, product thinking and automation when the problem needs it.</p>
         </div>
         <div class="cap-grid">
@@ -496,7 +342,7 @@
 
       <section id="proof">
         <div class="section-head">
-          <div><div class="eyebrow mono">04 / Proof of work</div><h2 class="section-title">The details are<br>the portfolio.</h2></div>
+          <div><div class="eyebrow mono">03 / Proof of work</div><h2 class="section-title">The details are<br>the portfolio.</h2></div>
           <p class="section-sub">A polished screenshot is easy. A good product survives edge cases, bad inputs, weird devices and real users. That’s the part I care about.</p>
         </div>
         <div class="proof">
@@ -523,44 +369,18 @@
               <div class="audit-item"><b>Responsive quality</b><span>Does mobile feel designed?</span></div>
               <div class="audit-item"><b>Implementation</b><span>Can I fix or rebuild it? Yes.</span></div>
             </div>
-            <a class="btn primary audit-mini-cta" href="#audit">Get my free audit ↗</a>
           </div>
-        </div>
-      </section>
-
-
-      <section id="audit">
-        <div class="audit-offer interactive-card" data-nexa="This is intentionally low-friction: one URL, three useful observations, no sales call required.">
-          <div class="audit-glow" aria-hidden="true"></div>
-          <div class="audit-copy">
-            <div class="free-badge mono">FREE · NO CARD · NO CALL REQUIRED</div>
-            <div class="eyebrow mono">05 / Free 3-point website audit</div>
-            <h2>Send me your website.<br>I’ll show you the first 3 things I’d improve.</h2>
-            <p>You do not need to hire me first. Send the URL and I’ll review the page from a design, UX and responsive perspective so you can see how I think before spending anything.</p>
-            <div class="audit-proof mono"><span>01 / VISUAL HIERARCHY</span><span>02 / UX + CONVERSION</span><span>03 / MOBILE QUALITY</span></div>
-          </div>
-          <form class="audit-form" id="auditForm">
-            <label for="auditUrl">Your website URL</label>
-            <div class="audit-input-row">
-              <input id="auditUrl" name="website" type="text" inputmode="url" autocomplete="url" placeholder="yourwebsite.com" required />
-              <button class="btn primary magnetic" type="submit">Get the free audit ↗</button>
-            </div>
-            <p><strong>That’s it.</strong> The button opens a ready-to-send email with your URL already filled in.</p>
-            <div class="audit-zero mono"><b>$0</b><span>No obligation.<br>No generic report.</span></div>
-            <a class="audit-email mono" href="mailto:sapthor.dev@gmail.com?subject=Free%203-Point%20Website%20Audit">Prefer email? sapthor.dev@gmail.com ↗</a>
-          </form>
         </div>
       </section>
 
       <section id="contact">
         <div class="cta interactive-card" data-nexa="This is the part where a visitor becomes a conversation.">
-          <div class="eyebrow mono">06 / Start a project</div>
+          <div class="eyebrow mono">04 / Start here</div>
           <h2>Have a website, product or weird idea?</h2>
           <p>Send me the site, the problem or even the rough idea. I can design from scratch, improve what already exists, or build the product around the workflow you actually need.</p>
           <div class="buttons" style="margin-top:26px">
-            <a class="btn primary magnetic" href="mailto:sapthor.dev@gmail.com?subject=Project%20inquiry%20for%20Sapthor%20Dev">Email Sapthor Dev ↗</a>
-            <a class="btn secondary magnetic" href="#audit">Start with the free audit ↗</a>
-            <a class="btn secondary magnetic" href="https://www.threads.com/@sapthordev" target="_blank" rel="noopener">Threads ↗</a>
+            <a class="btn primary magnetic" href="https://www.threads.com/@sapthordev" target="_blank" rel="noopener">Message me on Threads ↗</a>
+            <a class="btn secondary magnetic" href="https://bsky.app/profile/sapthor.bsky.social" target="_blank" rel="noopener">Find me on Bluesky ↗</a>
           </div>
         </div>
       </section>
@@ -574,40 +394,13 @@
       <div class="command-head"><span>Jump anywhere</span><span>ESC to close</span></div>
       <div class="command-list">
         <a href="#work">Selected work <span>01</span></a>
-        <a href="#lab">Sapthor Lab <span>02</span></a>
-        <a href="#capabilities">Capabilities <span>03</span></a>
-        <a href="#proof">How I work <span>04</span></a>
-        <a href="#audit"><strong>Free website audit</strong> <span>FREE ↗</span></a>
-        <a href="#contact">Start a project <span>06</span></a>
+        <a href="#capabilities">Capabilities <span>02</span></a>
+        <a href="#proof">How I work <span>03</span></a>
+        <a href="#contact">Start a project <span>04</span></a>
         <a href="https://github.com/SapthorDev" target="_blank" rel="noopener">GitHub <span>↗</span></a>
       </div>
     </div>
   </div>
-
-
-  <div class="case-modal" id="caseModal" role="dialog" aria-modal="true" aria-labelledby="caseTitle" aria-hidden="true">
-    <div class="case-box">
-      <div class="case-top"><span class="eyebrow mono" id="caseType">CASE STUDY</span><button class="icon-btn" type="button" id="caseClose" aria-label="Close case study">✕</button></div>
-      <h2 id="caseTitle">Project</h2>
-      <p class="case-lead" id="caseLead"></p>
-      <div class="case-grid">
-        <div><span class="mono">01 / PROBLEM</span><p id="caseProblem"></p></div>
-        <div><span class="mono">02 / BUILD</span><p id="caseBuild"></p></div>
-        <div><span class="mono">03 / OUTCOME</span><p id="caseResult"></p></div>
-      </div>
-      <div class="case-foot mono">REAL PRODUCT WORK · NO TEMPLATE CASE STUDY</div>
-    </div>
-  </div>
-
-  <aside class="dev-panel mono" id="devPanel" aria-live="polite">
-    <div><strong>DEVELOPER MODE</strong><button type="button" id="devClose" aria-label="Close developer mode">✕</button></div>
-    <p><span>viewport</span><b id="devViewport">—</b></p>
-    <p><span>theme</span><b id="devTheme">—</b></p>
-    <p><span>pointer</span><b id="devPointer">—</b></p>
-    <p><span>scroll</span><b id="devScroll">0%</b></p>
-    <p><span>motion</span><b id="devMotion">—</b></p>
-  </aside>
-
 
   <script>
     const root=document.documentElement, themeBtn=document.getElementById('themeBtn');
@@ -713,139 +506,6 @@
       });
       card.addEventListener('mouseleave',()=>card.style.transform='');
     });
-
-    // --- Sapthor Lab interactions ---
-    const redesignRange=document.getElementById('redesignRange'),beforeAfter=document.getElementById('beforeAfter');
-    redesignRange.addEventListener('input',()=>beforeAfter.style.setProperty('--split',redesignRange.value+'%'));
-
-    const deviceFrame=document.getElementById('deviceFrame');
-    document.querySelectorAll('[data-device]').forEach(btn=>btn.addEventListener('click',()=>{
-      document.querySelectorAll('[data-device]').forEach(x=>x.classList.remove('active'));
-      btn.classList.add('active');
-      deviceFrame.dataset.size=btn.dataset.device;
-    }));
-
-    const flowNodes=[...document.querySelectorAll('#flowDemo .flow-node')],runFlow=document.getElementById('runFlow'),flowLog=document.getElementById('flowLog');
-    const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
-    let flowRunning=false;
-    runFlow.addEventListener('click',async()=>{
-      if(flowRunning)return;
-      flowRunning=true;runFlow.disabled=true;runFlow.textContent='Running…';
-      flowNodes.forEach(n=>n.classList.remove('active','done'));
-      const labels=['lead captured','website validated','opportunity scored','owner notified'];
-      for(let i=0;i<flowNodes.length;i++){
-        flowNodes[i].classList.add('active');
-        flowLog.textContent='RUNNING / '+labels[i];
-        if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches) await wait(430);
-        flowNodes[i].classList.remove('active');flowNodes[i].classList.add('done');
-      }
-      flowLog.textContent='DONE / workflow completed';
-      runFlow.textContent='Run again';runFlow.disabled=false;flowRunning=false;
-    });
-
-    const chartSets={
-      7:{bars:[28,46,39,68,57,82,72],qualified:'64',conversion:'12.8%'},
-      30:{bars:[36,58,44,63,74,61,88],qualified:'238',conversion:'14.1%'},
-      90:{bars:[48,39,61,55,78,70,92],qualified:'712',conversion:'15.6%'}
-    };
-    const chartBars=[...document.querySelectorAll('#barChart i')];
-    document.querySelectorAll('[data-range]').forEach(btn=>btn.addEventListener('click',()=>{
-      document.querySelectorAll('[data-range]').forEach(x=>x.classList.remove('active'));btn.classList.add('active');
-      const d=chartSets[btn.dataset.range];
-      chartBars.forEach((bar,i)=>bar.style.height=d.bars[i]+'%');
-      document.getElementById('metricQualified').textContent=d.qualified;
-      document.getElementById('metricConversion').textContent=d.conversion;
-    }));
-
-    const rtlToggle=document.getElementById('rtlToggle'),localeDemo=document.getElementById('localeDemo');
-    let rtl=false;
-    rtlToggle.addEventListener('click',()=>{
-      rtl=!rtl;localeDemo.dir=rtl?'rtl':'ltr';rtlToggle.textContent=rtl?'Switch to LTR':'Switch to RTL';
-      document.getElementById('localeNav').textContent=rtl?'کاتالوگ   درخواست‌ها   حساب':'Catalog   Requests   Account';
-      document.getElementById('localeKicker').textContent=rtl?'فضای کاری تأمین قطعات':'PROCUREMENT WORKSPACE';
-      document.getElementById('localeTitle').innerHTML=rtl?'قطعه درست را درخواست کنید.<br>فرآیند را شفاف نگه دارید.':'Request the right part.<br>Keep the process clear.';
-      document.getElementById('localeCopy').textContent=rtl?'مشخصات، فایل‌های فنی و تعداد موردنیاز را در یک درخواست ساختاریافته ثبت کنید.':'Add specifications, technical files and quantities in one structured request.';
-      document.getElementById('localeCta').textContent=rtl?'ایجاد درخواست تأمین ←':'Create sourcing request ↗';
-    });
-
-    // --- Free website audit conversion ---
-    const auditForm=document.getElementById('auditForm');
-    auditForm.addEventListener('submit',e=>{
-      e.preventDefault();
-      const url=document.getElementById('auditUrl').value.trim();
-      if(!url)return;
-      const subject='Free 3-Point Website Audit';
-      const body='Hi Sapthor Dev,\n\nI would like the free 3-point website audit.\n\nWebsite: '+url+'\n\nThanks.';
-      window.location.href='mailto:sapthor.dev@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
-    });
-
-    // --- Project case studies ---
-    const caseStudies={
-      partcortex:{
-        type:'B2B SYSTEM / CASE STUDY',title:'PartCortex',
-        lead:'A bilingual procurement experience where interface design has to support real business logic, technical products and multi-step decisions.',
-        problem:'Industrial sourcing is more complex than a brochure website. Buyers need to compare technical items, submit sourcing requests and move through quotations and approvals without losing context.',
-        build:'I shaped the experience around catalog discovery, filters, comparisons, RTL/LTR behavior, technical-file intake, private quotations, approvals, customer accounts and order flow.',
-        result:'The result is a coherent procurement workflow rather than a collection of disconnected forms — with design and business logic working as one system.'
-      },
-      zuvoqi:{
-        type:'SOCIAL PRODUCT / CASE STUDY',title:'Zuvoqi',
-        lead:'A social product built around curiosity, guessing and delayed reveals instead of the standard like-first feed.',
-        problem:'Most social interactions resolve immediately. Zuvoqi needed a reason for people to participate now and still care enough to return later.',
-        build:'I designed the Mystery → guess → sealed truth → reveal loop, then built the product states, access rules and reveal mechanics around that behavior.',
-        result:'The product has a distinct interaction model with a built-in return loop and a UI that has to communicate uncertainty, timing and reveal state clearly.'
-      },
-      rivuna:{
-        type:'SAAS / CASE STUDY',title:'Rivuna',
-        lead:'A focused freelancer workflow for turning scattered client feedback and endless revisions into clear project boundaries.',
-        problem:'Revision requests often arrive across messages, screenshots and voice notes. Scope grows quietly, and charging for extra work becomes awkward.',
-        build:'I built project setup, client links, structured revision items, revision counters, submission states and the path for paid extra rounds.',
-        result:'The boundary becomes visible before it becomes a conflict: clients know what remains, feedback stays structured and extra rounds have an explicit path.'
-      },
-      lli:{
-        type:'CHROME EXTENSION / CASE STUDY',title:'Local Lead Intelligence',
-        lead:'A browser tool that turns Google Maps prospecting into an evidence-backed decision flow.',
-        problem:'Raw business lists are noisy. A useful prospecting tool has to verify details, understand website signals and help decide which business deserves attention first.',
-        build:'I built a Discover → Verify → Enrich → Score pipeline with website-opportunity signals, business signals, issue detection and source evidence inside a Chrome extension workflow.',
-        result:'Instead of exporting a pile of leads, LLI surfaces prioritized opportunities with the evidence needed to understand why each lead matters.'
-      }
-    };
-    const caseModal=document.getElementById('caseModal'),caseClose=document.getElementById('caseClose');
-    let lastFocused=null;
-    function closeCase(){
-      caseModal.classList.remove('open');caseModal.setAttribute('aria-hidden','true');
-      document.body.style.overflow='';if(lastFocused)lastFocused.focus();
-    }
-    document.querySelectorAll('.case-open').forEach(btn=>btn.addEventListener('click',e=>{
-      e.stopPropagation();const d=caseStudies[btn.dataset.case];if(!d)return;lastFocused=btn;
-      document.getElementById('caseType').textContent=d.type;document.getElementById('caseTitle').textContent=d.title;
-      document.getElementById('caseLead').textContent=d.lead;document.getElementById('caseProblem').textContent=d.problem;
-      document.getElementById('caseBuild').textContent=d.build;document.getElementById('caseResult').textContent=d.result;
-      caseModal.classList.add('open');caseModal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';caseClose.focus();
-    }));
-    caseClose.addEventListener('click',closeCase);
-    caseModal.addEventListener('click',e=>{if(e.target===caseModal)closeCase()});
-
-    // --- Developer mode ---
-    const devModeBtn=document.getElementById('devModeBtn'),devPanel=document.getElementById('devPanel'),devClose=document.getElementById('devClose');
-    function updateDev(){
-      document.getElementById('devViewport').textContent=window.innerWidth+' × '+window.innerHeight;
-      document.getElementById('devTheme').textContent=root.dataset.theme;
-      document.getElementById('devPointer').textContent=coarsePointer?'coarse / touch':'fine / mouse';
-      const max=document.documentElement.scrollHeight-window.innerHeight;
-      document.getElementById('devScroll').textContent=(max>0?Math.round(window.scrollY/max*100):0)+'%';
-      document.getElementById('devMotion').textContent=window.matchMedia('(prefers-reduced-motion: reduce)').matches?'reduced':'full';
-    }
-    function setDev(open){
-      document.body.classList.toggle('dev-mode',open);devPanel.classList.toggle('open',open);devModeBtn.textContent=open?'Developer mode: ON':'Enter developer mode ⌘';updateDev();
-    }
-    devModeBtn.addEventListener('click',()=>setDev(!devPanel.classList.contains('open')));
-    devClose.addEventListener('click',()=>setDev(false));window.addEventListener('resize',updateDev);window.addEventListener('scroll',updateDev,{passive:true});
-    themeBtn.addEventListener('click',updateDev);
-
-    // Make Escape close both overlays.
-    window.addEventListener('keydown',e=>{if(e.key==='Escape'){closeCase();if(devPanel.classList.contains('open'))setDev(false)}});
-
   </script>
 </body>
 </html>
