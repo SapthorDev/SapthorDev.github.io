@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PartCortex — Sapthor Dev Case Study</title>
+  <meta name="description" content="PartCortex case study by Sapthor Dev." />
+  <link rel="stylesheet" href="../../case-study.css" />
+</head>
+<body>
+  <header class="top"><div class="wrap"><nav>
+    <a class="brand" href="../../">Sapthor Dev</a>
+    <div class="nav-actions"><a class="back" href="../../#work">← Back to work</a><button class="theme" id="themeBtn" aria-label="Toggle theme">◐</button></div>
+  </nav></div></header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow mono">B2B procurement system / Case study</div>
+      <h1>PartCortex</h1>
+      <p class="lead">A procurement experience designed around technical products, sourcing requests, quotations, approvals and customer workflows — not just a brochure site.</p>
+      <div class="meta mono"><span>B2B UX</span><span>Frontend</span><span>Workflow design</span><span>Responsive</span></div>
+    </section>
+
+    <section class="grid">
+      <article class="block"><div class="num mono">01 / PROBLEM</div><h2>What needed solving</h2><p>Industrial purchasing has more moving parts than a normal ecommerce flow. Buyers need to compare technical items, submit detailed requests and keep quotation decisions understandable.</p></article>
+      <article class="block"><div class="num mono">02 / BUILD</div><h2>What I built</h2><p>I structured the experience around technical catalog discovery, filtering, comparison, sourcing requests, private quotations, approvals, accounts and order flow.</p></article>
+      <article class="block"><div class="num mono">03 / VALUE</div><h2>What this demonstrates</h2><p>It demonstrates how I connect interface design with real business rules, instead of treating design and implementation as separate jobs.</p></article>
+    </section>
+
+    <section class="proof">
+      <div class="eyebrow mono">Proof of thinking</div>
+      <h2>Not just a screenshot.</h2>
+      <div class="proof-list"><div><b>Complex workflow</b><span>Multiple steps stay understandable without overwhelming the user.</span></div><div><b>Technical interface</b><span>Catalog, filtering and structured request flows are treated as product UX.</span></div><div><b>Responsive system</b><span>Layouts are designed to remain usable across screen sizes.</span></div><div><b>Business logic</b><span>The interface supports quotations, approvals and account-level workflows.</span></div></div>
+    </section>
+
+    <section class="cta">
+      <div class="eyebrow mono">Have a similar problem?</div>
+      <h2>I can design the interface and build the working system.</h2>
+      <p>Start with a project message, or send your current website for a free 3-point audit.</p>
+      <div class="btns">
+        <a class="btn primary" href="https://mail.google.com/mail/?view=cm&fs=1&to=sapthor.dev%40gmail.com&su=Project%20inquiry%20for%20Sapthor%20Dev" target="_blank" rel="noopener">Email Sapthor Dev ↗</a>
+        <a class="btn" href="../../#proof">Free website audit ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap mono">© 2026 SAPTHOR DEV · CASE STUDY</div></footer>
+  <script>
+    const root=document.documentElement,btn=document.getElementById('themeBtn');
+    const saved=localStorage.getItem('sapthor-theme'); if(saved) root.dataset.theme=saved;
+    btn.addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';localStorage.setItem('sapthor-theme',root.dataset.theme)});
+  </script>
+</body>
+</html>
