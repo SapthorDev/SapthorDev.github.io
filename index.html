@@ -137,11 +137,104 @@
     @media(pointer:fine){.cursor-dot,.cursor-ring{display:block}body{cursor:none}a,button{cursor:none}.cursor-ring.active{width:54px;height:54px;border-color:var(--accent)}}
 
     @media(max-width:900px){
-      .navlinks a:not(.nav-cta){display:none}.hero{grid-template-columns:1fr;padding-top:58px}.nexa-stage{min-height:410px}.section-head{grid-template-columns:1fr}
-      .project,.project.large,.project.small{grid-column:span 12}.cap-grid{grid-template-columns:1fr 1fr}.proof{grid-template-columns:1fr}
-      h1{letter-spacing:-3.8px}.cta{padding:34px}
+      .navlinks a:not(.nav-cta){display:none}
+      .hero{grid-template-columns:1fr;min-height:auto;padding:56px 0 38px;gap:26px}
+      .nexa-stage{min-height:380px}
+      .section-head{grid-template-columns:1fr;gap:16px}
+      .project,.project.large,.project.small{grid-column:span 12}
+      .cap-grid{grid-template-columns:1fr 1fr}
+      .proof{grid-template-columns:1fr}
+      h1{letter-spacing:-3.4px}
+      .cta{padding:34px}
+      section{padding:76px 0}
     }
-    @media(max-width:580px){.wrap{width:min(100% - 24px,1180px)}.cap-grid{grid-template-columns:1fr}.nexa{width:150px;height:150px}.eye{top:58px}.eye.left{left:38px}.eye.right{right:38px}.stamp{left:0;top:24px}.nexa-note{right:0;bottom:55px}.hero{padding-bottom:52px}.cta h2{letter-spacing:-2.5px}}
+    @media(max-width:640px){
+      .wrap{width:min(100% - 28px,1180px)}
+      .topbar{background:color-mix(in srgb,var(--bg) 88%,transparent)}
+      nav{height:64px;gap:8px}
+      .brand{gap:9px;font-size:15px;min-width:0}
+      .brand-mark{width:30px;height:30px;border-radius:9px;flex:0 0 auto}
+      .brand small{display:none}
+      .navlinks{gap:4px}
+      .navlinks .nav-cta{font-size:12px;padding:8px 10px!important;white-space:nowrap}
+      #cmdBtn{display:none}
+      .icon-btn{padding:8px 9px}
+
+      .hero{padding:38px 0 28px;gap:20px}
+      .kicker{font-size:11.5px;line-height:1.35;margin-bottom:16px;align-items:flex-start}
+      .pulse{margin-top:4px;flex:0 0 auto}
+      h1{font-size:clamp(42px,12.2vw,58px);line-height:.96;letter-spacing:-2.8px}
+      .hero-copy{font-size:16px;line-height:1.65;margin:20px 0 22px}
+      .buttons{display:grid;grid-template-columns:1fr}
+      .btn{width:100%;justify-content:space-between;padding:13px 15px;border-radius:14px}
+      .hero-meta{display:grid;grid-template-columns:1fr 1fr;gap:9px 14px;margin-top:20px;font-size:10.5px}
+      .hero-meta span:last-child{grid-column:1/-1}
+
+      .nexa-stage{min-height:332px;margin-top:2px}
+      .nexa-orbit{width:min(292px,82vw)}
+      .nexa{width:130px;height:130px}
+      .eye{top:51px;width:22px;height:12px}
+      .eye.left{left:34px}.eye.right{right:34px}
+      .nexa-label{bottom:25px;font-size:8.5px;letter-spacing:1.1px}
+      .stamp{width:78px;height:78px;left:-2px;top:24px}
+      .stamp:before{inset:6px;font-size:5px;letter-spacing:.65px}
+      .stamp strong{font-size:16px}
+      .nexa-note{left:50%;right:auto;bottom:-2px;transform:translateX(-50%);width:min(235px,76vw);max-width:none;text-align:center;padding:9px 12px;font-size:10.5px;border-radius:12px}
+      .nexa-note b{font-size:11px}
+      .orb-dot{width:6px;height:6px}
+
+      .ticker{padding:10px 0;font-size:10px}
+      section{padding:62px 0}
+      .section-head{margin-bottom:24px}
+      .eyebrow{font-size:9.5px;letter-spacing:1.4px}
+      .section-title{font-size:clamp(36px,10.5vw,48px);letter-spacing:-2.1px}
+      .section-sub{font-size:15px;line-height:1.65}
+
+      .project-grid{gap:12px}
+      .project{min-height:0;padding:20px;border-radius:22px}
+      .project-top{gap:10px}
+      .tag{font-size:8.5px;letter-spacing:1px;padding:5px 7px;max-width:76%}
+      .status{font-size:9px}
+      .project h3{font-size:29px;letter-spacing:-1.2px;margin:42px 0 8px}
+      .project p{font-size:14px;line-height:1.6}
+      .project-foot{position:static;margin-top:28px;font-size:9px;gap:10px}
+      .project-foot span:first-child{max-width:85%;line-height:1.45}
+      .arrow{font-size:18px}
+
+      .cap-grid{grid-template-columns:1fr;gap:0}
+      .cap{min-height:0;padding:22px 2px 24px}
+      .cap .num{margin-bottom:18px}
+      .cap h3{font-size:19px}
+      .cap p{font-size:13.5px;line-height:1.65}
+
+      .terminal,.audit-card{min-height:0;padding:19px;border-radius:21px}
+      .terminal-top{margin-bottom:20px}
+      .terminal pre{font-size:11px;line-height:1.75;overflow-wrap:anywhere}
+      .audit-card h3{font-size:25px;line-height:1.12}
+      .audit-card>p{font-size:14px;line-height:1.6}
+      .audit-list{margin-top:20px}
+      .audit-item{display:grid;grid-template-columns:1fr;gap:3px;padding:11px 0;font-size:12px}
+
+      .cta{padding:26px 20px;border-radius:24px}
+      .cta h2{font-size:clamp(38px,10.8vw,50px);line-height:.98;letter-spacing:-2.2px}
+      .cta p{font-size:14.5px;line-height:1.65}
+      .cta:after{width:260px;height:260px;right:-120px;top:-120px}
+      footer{padding:24px 0 34px;font-size:9.5px;line-height:1.5}
+      footer span:last-child{max-width:220px}
+
+      .command{align-items:end}
+      .command-box{width:100%;border-radius:22px 22px 0 0;border-bottom:0}
+      .command-list a{padding:15px 12px}
+    }
+    @media(max-width:380px){
+      .wrap{width:min(100% - 20px,1180px)}
+      .navlinks .nav-cta{font-size:11px;padding:7px 8px!important}
+      h1{font-size:39px;letter-spacing:-2.1px}
+      .hero-meta{grid-template-columns:1fr}
+      .hero-meta span:last-child{grid-column:auto}
+      .nexa-orbit{width:270px}
+      .project h3{margin-top:34px}
+    }
     @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}.cursor-dot,.cursor-ring{display:none!important}}
   </style>
 </head>
@@ -339,7 +432,9 @@
     document.querySelectorAll('[data-nexa]').forEach(el=>{
       el.addEventListener('mouseenter',()=>{nexa.dataset.mood='focus';nexaText.textContent=el.dataset.nexa});
       el.addEventListener('mouseleave',()=>{nexa.dataset.mood='idle';nexaText.textContent='Move around. She reacts.'});
+      el.addEventListener('click',()=>{if(window.matchMedia('(pointer:coarse)').matches){nexa.dataset.mood='focus';nexaText.textContent=el.dataset.nexa}});
     });
+    if(window.matchMedia('(pointer:coarse)').matches){nexaText.textContent='Tap a project. I react.';}
     document.querySelectorAll('.magnetic').forEach(el=>{
       el.addEventListener('mouseenter',()=>nexa.dataset.mood='happy');
       el.addEventListener('mouseleave',()=>nexa.dataset.mood='idle');
