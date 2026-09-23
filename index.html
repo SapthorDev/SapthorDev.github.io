@@ -412,29 +412,62 @@
     });
 
     const dot=document.querySelector('.cursor-dot'),ring=document.querySelector('.cursor-ring');
+    const nexa=document.getElementById('nexa'),nexaText=document.getElementById('nexaText');
+    const eyes=[...nexa.querySelectorAll('.eye')];
+    const coarsePointer=window.matchMedia('(pointer:coarse)').matches;
     let rx=0,ry=0,mx=0,my=0;
+    let eyeX=0,eyeY=0,targetEyeX=0,targetEyeY=0,lastTouchAt=0;
+
+    function setEyeTarget(clientX,clientY){
+      const r=nexa.getBoundingClientRect();
+      targetEyeX=Math.max(-5,Math.min(5,(clientX-(r.left+r.width/2))/45));
+      targetEyeY=Math.max(-3,Math.min(3,(clientY-(r.top+r.height/2))/65));
+    }
+
     window.addEventListener('mousemove',e=>{
       mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';
       root.style.setProperty('--mx',(mx/window.innerWidth*100)+'%');
       root.style.setProperty('--my',(my/window.innerHeight*100)+'%');
-      const nexa=document.getElementById('nexa'),r=nexa.getBoundingClientRect();
-      const dx=Math.max(-5,Math.min(5,(mx-(r.left+r.width/2))/45));
-      const dy=Math.max(-3,Math.min(3,(my-(r.top+r.height/2))/65));
-      nexa.querySelectorAll('.eye').forEach(el=>el.style.translate=dx+'px '+dy+'px');
+      setEyeTarget(mx,my);
     });
+
+    window.addEventListener('touchstart',e=>{
+      if(!e.touches.length)return;
+      const t=e.touches[0];
+      lastTouchAt=performance.now();
+      setEyeTarget(t.clientX,t.clientY);
+    },{passive:true});
+
+    window.addEventListener('touchmove',e=>{
+      if(!e.touches.length)return;
+      const t=e.touches[0];
+      lastTouchAt=performance.now();
+      setEyeTarget(t.clientX,t.clientY);
+    },{passive:true});
+
+    function animateEyes(now){
+      if(coarsePointer && now-lastTouchAt>1400){
+        targetEyeX=Math.sin(now/1150)*2.8+Math.sin(now/3100)*1.1;
+        targetEyeY=Math.sin(now/1750+.8)*1.6;
+      }
+      eyeX+=(targetEyeX-eyeX)*.11;
+      eyeY+=(targetEyeY-eyeY)*.11;
+      eyes.forEach(el=>el.style.translate=eyeX.toFixed(2)+'px '+eyeY.toFixed(2)+'px');
+      requestAnimationFrame(animateEyes);
+    }
+    requestAnimationFrame(animateEyes);
+
     function follow(){rx+=(mx-rx)*.16;ry+=(my-ry)*.16;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(follow)}follow();
     document.querySelectorAll('a,button,.interactive-card').forEach(el=>{
       el.addEventListener('mouseenter',()=>ring.classList.add('active'));
       el.addEventListener('mouseleave',()=>ring.classList.remove('active'));
     });
-
-    const nexa=document.getElementById('nexa'),nexaText=document.getElementById('nexaText');
     document.querySelectorAll('[data-nexa]').forEach(el=>{
       el.addEventListener('mouseenter',()=>{nexa.dataset.mood='focus';nexaText.textContent=el.dataset.nexa});
       el.addEventListener('mouseleave',()=>{nexa.dataset.mood='idle';nexaText.textContent='Move around. She reacts.'});
       el.addEventListener('click',()=>{if(window.matchMedia('(pointer:coarse)').matches){nexa.dataset.mood='focus';nexaText.textContent=el.dataset.nexa}});
     });
-    if(window.matchMedia('(pointer:coarse)').matches){nexaText.textContent='Tap a project. I react.';}
+    if(coarsePointer){nexaText.textContent='I look around — touch and drag anywhere.';}
     document.querySelectorAll('.magnetic').forEach(el=>{
       el.addEventListener('mouseenter',()=>nexa.dataset.mood='happy');
       el.addEventListener('mouseleave',()=>nexa.dataset.mood='idle');
