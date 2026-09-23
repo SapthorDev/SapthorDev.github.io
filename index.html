@@ -118,7 +118,16 @@
     .terminal pre{margin:0;color:var(--muted);font:13px/1.9 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap}
     .terminal .cmd{color:var(--accent)}.terminal .ok{color:var(--text)}
     .audit-card h3{font-size:28px;margin:0 0 10px;letter-spacing:-1px}.audit-card>p{color:var(--muted);margin-top:0}
-    .audit-list{display:grid;gap:9px;margin-top:28px}.audit-item{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--line);font-size:13px}.audit-item span{color:var(--muted)}
+    .audit-list{display:grid;gap:9px;margin-top:24px}.audit-item{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid var(--line);font-size:13px}.audit-item span{color:var(--muted)}
+    .audit-form{margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+    .audit-form label{display:block;font-size:11px;font-weight:800;margin-bottom:8px;color:var(--text)}
+    .audit-input-row{display:grid;grid-template-columns:1fr auto;gap:9px}
+    .audit-input-row input{min-width:0;border:1px solid var(--line);background:var(--bg);color:var(--text);padding:12px 13px;border-radius:12px;outline:none;font:inherit}
+    .audit-input-row input:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 10%,transparent)}
+    .audit-input-row .btn{padding:12px 14px;font-size:12px;white-space:nowrap}
+    .audit-note{margin:9px 0 0!important;font-size:10px!important;color:var(--muted)!important}
+    .audit-note b{color:var(--accent)}
+    .email-btn{border-color:color-mix(in srgb,var(--accent) 35%,var(--line))!important}
 
     .cta{border:1px solid var(--line);border-radius:32px;padding:48px;position:relative;overflow:hidden;background:var(--panel)}
     .cta:after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-170px;top:-210px;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 18%,transparent),transparent 70%)}
@@ -214,6 +223,8 @@
       .audit-card>p{font-size:14px;line-height:1.6}
       .audit-list{margin-top:20px}
       .audit-item{display:grid;grid-template-columns:1fr;gap:3px;padding:11px 0;font-size:12px}
+      .audit-input-row{grid-template-columns:1fr}
+      .audit-input-row .btn{width:100%;justify-content:center}
 
       .cta{padding:26px 20px;border-radius:24px}
       .cta h2{font-size:clamp(38px,10.8vw,50px);line-height:.98;letter-spacing:-2.2px}
@@ -369,6 +380,14 @@
               <div class="audit-item"><b>Responsive quality</b><span>Does mobile feel designed?</span></div>
               <div class="audit-item"><b>Implementation</b><span>Can I fix or rebuild it? Yes.</span></div>
             </div>
+            <form class="audit-form" id="auditForm">
+              <label for="auditUrl">Your website URL</label>
+              <div class="audit-input-row">
+                <input id="auditUrl" type="text" inputmode="url" autocomplete="url" placeholder="yourwebsite.com" required />
+                <button class="btn primary magnetic" type="submit">Get the free audit ↗</button>
+              </div>
+              <p class="audit-note"><b>100% free.</b> No call required — Gmail opens with your URL already included.</p>
+            </form>
           </div>
         </div>
       </section>
@@ -379,7 +398,8 @@
           <h2>Have a website, product or weird idea?</h2>
           <p>Send me the site, the problem or even the rough idea. I can design from scratch, improve what already exists, or build the product around the workflow you actually need.</p>
           <div class="buttons" style="margin-top:26px">
-            <a class="btn primary magnetic" href="https://www.threads.com/@sapthordev" target="_blank" rel="noopener">Message me on Threads ↗</a>
+            <a class="btn primary magnetic email-btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=sapthor.dev%40gmail.com&su=Project%20inquiry%20for%20Sapthor%20Dev" target="_blank" rel="noopener">Email Sapthor Dev ↗</a>
+            <a class="btn secondary magnetic" href="https://www.threads.com/@sapthordev" target="_blank" rel="noopener">Message me on Threads ↗</a>
             <a class="btn secondary magnetic" href="https://bsky.app/profile/sapthor.bsky.social" target="_blank" rel="noopener">Find me on Bluesky ↗</a>
           </div>
         </div>
@@ -505,6 +525,17 @@
         }
       });
       card.addEventListener('mouseleave',()=>card.style.transform='');
+    });
+
+    const auditForm=document.getElementById('auditForm');
+    auditForm.addEventListener('submit',e=>{
+      e.preventDefault();
+      const url=document.getElementById('auditUrl').value.trim();
+      if(!url)return;
+      const subject='Free 3-Point Website Audit';
+      const body='Hi Sapthor Dev,\n\nI would like the free 3-point website audit.\n\nWebsite: '+url+'\n\nThanks.';
+      const gmail='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent('sapthor.dev@gmail.com')+'&su='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+      window.open(gmail,'_blank','noopener');
     });
   </script>
 </body>
