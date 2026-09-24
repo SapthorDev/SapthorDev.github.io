@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07111f">
+<title>ARC VOLT | Electrical Engineering Concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07111f;--bg2:#0c1e31;--mint:#36e6c4;--paper:#f4f7f9;--ink:#0b1622;--muted:#6d7985;--line:#dfe6eb;--r:22px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Vazirmatn,Arial,sans-serif;line-height:1.75}body.en{font-family:Inter,Arial,sans-serif}a{text-decoration:none;color:inherit}.wrap{width:min(1160px,calc(100% - 36px));margin:auto}
+.demo{position:fixed;left:16px;bottom:16px;z-index:50;background:#07111feb;color:#a8ffef;border:1px solid #36e6c45c;border-radius:999px;padding:8px 12px;font:800 9px Inter;letter-spacing:.15em;backdrop-filter:blur(10px)}
+header{position:sticky;top:0;z-index:40;background:#f4f7f9e8;border-bottom:1px solid #0b16220d;backdrop-filter:blur(14px)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:11px}.mark{width:39px;height:39px;border-radius:12px;background:var(--bg);display:grid;place-items:center;color:var(--mint);font:900 21px Inter}.brand b{font:800 14px Inter;letter-spacing:.12em;display:block}.brand small{display:block;color:#788491;font-size:9px}.links{display:flex;gap:28px;font-size:12px;font-weight:700;color:#3c4855}.links a:hover{color:#079d87}.acts{display:flex;gap:9px;align-items:center}.lang{border:0;background:#e5ebef;border-radius:10px;width:42px;height:38px;font:800 11px Inter;cursor:pointer}.cta{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 16px;border-radius:11px;background:var(--mint);font-size:11px;font-weight:800}
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#07111f,#0b1c2e 58%,#102b40);color:white;padding:74px 0 0}.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:40px 40px;mask-image:linear-gradient(#000,transparent 82%)}.heroGrid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:58px;align-items:center;min-height:585px}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--mint);font-size:11px;font-weight:800}.dot{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 6px #36e6c419}.hero h1{font-size:clamp(43px,5.2vw,72px);line-height:1.12;letter-spacing:-.035em;margin:18px 0 20px}.hero h1 span{color:#9dafbd;font-weight:600}.lead{color:#b2c1cd;font-size:15px;max-width:610px;margin:0 0 27px}.buttons{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border-radius:12px;font-size:12px;font-weight:800}.primary{background:var(--mint);color:#06231d}.ghost{border:1px solid #ffffff27;background:#ffffff08;color:#fff}.stats{display:flex;gap:34px;margin-top:42px;padding-top:25px;border-top:1px solid #ffffff15}.stats div{display:grid}.stats b{font:800 20px Inter}.stats span{font-size:10px;color:#8da2b4}
+.visual{position:relative;min-height:500px;display:grid;place-items:center}.panel{width:min(440px,94%);padding:20px;border-radius:30px;background:linear-gradient(180deg,#12273ceb,#091a2c);border:1px solid #ffffff17;box-shadow:0 28px 80px #0005}.panelTop,.meterHead{display:flex;justify-content:space-between;align-items:center}.panelTop{font:700 9px Inter;letter-spacing:.12em;color:#7590a6}.online{color:#89ffe8}.meter{margin-top:16px;background:#071420;border:1px solid #ffffff0d;border-radius:15px;padding:15px}.meterHead{font-size:10px;color:#879cad}.meterHead b{font:800 13px Inter;color:#fff}.bars{height:60px;display:flex;gap:6px;align-items:flex-end;margin-top:10px}.bars i{flex:1;background:linear-gradient(#36e6c4,#248fff);border-radius:4px 4px 1px 1px}.scheme{height:190px;margin:13px 0;border-radius:16px;position:relative;overflow:hidden;background:radial-gradient(circle at center,#18354f,#081724 62%);border:1px solid #ffffff0d}.scheme:before{content:"";position:absolute;inset:0;background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:22px 22px}.bolt{position:absolute;inset:0;margin:auto;width:67px;height:67px;border-radius:21px;display:grid;place-items:center;background:#0e2539;border:1px solid #36e6c458;box-shadow:0 0 45px #36e6c421;color:var(--mint);font-size:31px}.nodes span{position:absolute;width:10px;height:10px;border-radius:50%;border:2px solid var(--mint);background:#0b2031;box-shadow:0 0 12px #36e6c488}.n1{top:22%;left:14%}.n2{top:18%;right:15%}.n3{bottom:22%;left:18%}.n4{bottom:24%;right:17%}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.metrics div{padding:11px;border-radius:12px;background:#ffffff07;border:1px solid #ffffff0b;display:grid}.metrics small{font-size:8px;color:#71889c}.metrics b{font:800 13px Inter}.sector{position:relative;display:flex;justify-content:space-between;align-items:center;gap:18px;min-height:80px;margin-top:36px;border-top:1px solid #ffffff13;color:#8ea0b0;font-size:10px}.sector b{color:#adbbc6}
+section{padding:92px 0}.head{display:flex;justify-content:space-between;align-items:end;gap:50px;margin-bottom:36px}.kicker{color:#0b9f88;font-size:11px;font-weight:800}.head h2,.why h2,.contact h2{font-size:clamp(29px,3.4vw,45px);line-height:1.27;margin:9px 0 0;letter-spacing:-.025em}.head p{max-width:450px;margin:0;color:var(--muted);font-size:13px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{position:relative;min-height:300px;padding:26px;background:white;border:1px solid #e4eaee;border-radius:var(--r);box-shadow:0 8px 35px #14283a0a}.card.dark{background:var(--bg);color:white;border-color:transparent}.icon{width:48px;height:48px;border-radius:14px;background:#e6faf6;display:grid;place-items:center;color:#078f7a;font-size:22px;margin-bottom:36px}.dark .icon{background:#36e6c417;color:var(--mint)}.card .num{position:absolute;top:28px;left:26px;color:#a7b1bb;font:800 10px Inter}body.en .card .num{left:auto;right:26px}.card h3{font-size:18px;margin:0 0 9px}.card p{font-size:12px;color:#737f8a;margin:0}.dark p{color:#9fb0bd}.card a{position:absolute;bottom:24px;color:#0b9984;font-size:11px;font-weight:800}.dark a{color:var(--mint)}
+.why{background:white}.whyGrid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}.why p{color:var(--muted);font-size:13px;max-width:560px}.list{display:grid;gap:5px;margin-top:25px}.item{display:flex;gap:13px;padding:14px 0;border-top:1px solid #edf1f3}.check{width:27px;height:27px;border-radius:8px;background:#e6faf5;color:#079d87;display:grid;place-items:center;font-weight:900}.item div{display:grid}.item b{font-size:13px}.item small{font-size:10px;color:#7b8792}.quality{min-height:450px;border-radius:28px;padding:28px;background:linear-gradient(145deg,#07121f,#102b41);color:white;display:grid;place-items:center}.ring{width:220px;height:220px;border-radius:50%;background:conic-gradient(var(--mint) 0 352deg,#1c394e 352deg);display:grid;place-items:center}.ring:before{content:"";position:absolute}.ringIn{width:188px;height:188px;border-radius:50%;background:#0c2031;display:grid;place-items:center;text-align:center}.ring b{font:800 42px Inter}.ring span{font-size:9px;color:#8da3b4}
+.process{background:#edf2f5}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.step span{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:white;border:1px solid #dbe3e8;font:800 10px Inter}.step:nth-child(even) span{background:var(--bg);color:var(--mint);border-color:var(--bg)}.step h3{font-size:15px;margin:18px 0 5px}.step p{font-size:11px;color:var(--muted);margin:0}
+.insights .posts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.post{background:white;border:1px solid #e4eaee;border-radius:19px;padding:15px}.thumb{height:150px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,#0b2035,#124851);color:#6dffe1;font:800 34px Inter;margin-bottom:14px}.post:nth-child(2) .thumb{background:linear-gradient(145deg,#141d2d,#203a65);color:#8bb6ff}.post:nth-child(3) .thumb{background:linear-gradient(145deg,#29241a,#524720);color:#f0d869}.post small{color:#079b85;font-size:9px;font-weight:800}.post h3{font-size:15px;line-height:1.55;margin:6px 0}.post p{font-size:10px;color:var(--muted);margin:0}
+.contact{padding-top:36px}.contactBox{background:linear-gradient(135deg,#07111f,#0e2940);border-radius:28px;padding:44px;display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;color:white}.contact .kicker{color:var(--mint)}.contact h2{font-size:36px}.contact p{color:#9eb0bd;font-size:12px}.form{display:grid;gap:10px;background:#ffffff08;border:1px solid #ffffff11;padding:20px;border-radius:18px}.row{display:grid;grid-template-columns:1fr 1fr;gap:9px}.form label{display:grid;gap:5px;color:#9eafbc;font-size:9px;font-weight:700}.form input,.form textarea,.form select{width:100%;border:1px solid #ffffff12;background:#071521;color:#fff;border-radius:10px;padding:11px 12px;outline:0}.form button{border:0;cursor:pointer}.form small{color:#71899b;font-size:8px}
+footer{margin-top:90px;background:#07111f;color:white}.foot{padding:42px 0 26px;display:grid;grid-template-columns:.8fr 1.2fr 1fr;gap:42px}.foot p{margin:0;color:#8297a8;font-size:10px}.footLinks{display:flex;justify-content:flex-end;gap:18px;color:#a2b1bd;font-size:10px}.copy{padding:15px 0;border-top:1px solid #ffffff0d;color:#5d7488;font:600 8px Inter;display:flex;justify-content:space-between}
+@media(max-width:900px){.links{display:none}.heroGrid,.whyGrid,.contactBox{grid-template-columns:1fr}.heroGrid{padding-top:12px}.heroText{text-align:center}.lead{margin-inline:auto}.buttons,.stats{justify-content:center}.visual{min-height:450px}.cards,.insights .posts{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.head{align-items:start;flex-direction:column;gap:12px}.foot{grid-template-columns:1fr 1fr}.footLinks{grid-column:1/-1;justify-content:flex-start}}
+@media(max-width:620px){.wrap{width:min(100% - 26px,1160px)}.nav{height:68px}.brand small,.cta{display:none}.hero{padding-top:42px}.heroGrid{min-height:0}.hero h1{font-size:40px}.stats{gap:18px}.stats b{font-size:17px}.visual{min-height:405px}.panel{width:100%}.sector{flex-wrap:wrap;justify-content:center;padding:22px 0}.cards,.insights .posts,.steps{grid-template-columns:1fr}section{padding:70px 0}.quality{min-height:390px}.contactBox{padding:27px 19px}.contact h2{font-size:28px}.row{grid-template-columns:1fr}.foot{grid-template-columns:1fr}.footLinks{grid-column:auto;flex-wrap:wrap}.copy{flex-direction:column;gap:7px}.demo{left:10px;bottom:10px}}
+</style>
+</head>
+<body>
+<div class="demo">CONCEPT PREVIEW / DEMO</div>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top"><span class="mark">ϟ</span><span><b>ARC VOLT</b><small data-t="sub">مهندسی برق و اتوماسیون</small></span></a>
+    <nav class="links"><a href="#services" data-t="services">خدمات</a><a href="#why" data-t="why">چرا ما</a><a href="#process" data-t="process">فرآیند همکاری</a><a href="#insights" data-t="blog">دانش فنی</a><a href="#contact" data-t="contact">تماس</a></nav>
+    <div class="acts"><button class="lang" id="lang">EN</button><a class="cta" href="#contact" data-t="consult">درخواست مشاوره</a></div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap heroGrid">
+    <div class="heroText">
+      <div class="eyebrow"><i class="dot"></i><span data-t="eyebrow">راهکارهای برق برای پروژه‌های دقیق و قابل اتکا</span></div>
+      <h1 data-html="title">مهندسی برق،<br><span>از طراحی تا اجرای مطمئن.</span></h1>
+      <p class="lead" data-t="lead">طراحی، اجرا و بهینه‌سازی سیستم‌های برق صنعتی و ساختمانی با تمرکز بر ایمنی، پایداری و عملکرد بلندمدت.</p>
+      <div class="buttons"><a class="btn primary" href="#contact" data-t="start">شروع پروژه</a><a class="btn ghost" href="#services" data-t="see">مشاهده خدمات</a></div>
+      <div class="stats"><div><b>+12</b><span data-t="years">سال تجربه تخصصی</span></div><div><b>+180</b><span data-t="projects">پروژه اجراشده</span></div><div><b>24/7</b><span data-t="support">پشتیبانی فنی</span></div></div>
+    </div>
+    <div class="visual">
+      <div class="panel">
+        <div class="panelTop"><span>SYSTEM STATUS</span><b class="online">● ONLINE</b></div>
+        <div class="meter"><div class="meterHead"><span data-t="load">بار لحظه‌ای</span><b>74%</b></div><div class="bars"><i style="height:35%"></i><i style="height:48%"></i><i style="height:60%"></i><i style="height:52%"></i><i style="height:76%"></i><i style="height:66%"></i><i style="height:91%"></i><i style="height:79%"></i><i style="height:63%"></i><i style="height:72%"></i></div></div>
+        <div class="scheme"><div class="bolt">ϟ</div><div class="nodes"><span class="n1"></span><span class="n2"></span><span class="n3"></span><span class="n4"></span></div></div>
+        <div class="metrics"><div><small data-t="voltage">ولتاژ</small><b>400V</b></div><div><small data-t="eff">بهره‌وری</small><b>98.6%</b></div><div><small data-t="pf">ضریب توان</small><b>0.96</b></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap sector"><span data-t="for">راهکار برای</span><b data-t="industry">صنعت</b><b data-t="building">ساختمان</b><b data-t="infra">زیرساخت</b><b data-t="automation">اتوماسیون</b><b data-t="energy">انرژی</b></div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="head"><div><span class="kicker" data-t="expertise">حوزه‌های تخصصی</span><h2 data-t="serviceTitle">خدمات مهندسی برق، یکپارچه و قابل توسعه</h2></div><p data-t="serviceIntro">از مطالعات اولیه و طراحی تا اجرا، راه‌اندازی و نگهداری؛ یک مسیر مهندسی منظم برای کاهش ریسک و افزایش کیفیت پروژه.</p></div>
+    <div class="cards">
+      <article class="card"><div class="icon">⌂</div><span class="num">01</span><h3 data-t="s1">برق صنعتی و ساختمانی</h3><p data-t="s1p">طراحی و اجرای تابلو برق، توزیع، روشنایی، ارت، حفاظت و زیرساخت‌های الکتریکی.</p><a href="#contact" data-t="more">جزئیات بیشتر ↗</a></article>
+      <article class="card dark"><div class="icon">⌘</div><span class="num">02</span><h3 data-t="s2">اتوماسیون و کنترل</h3><p data-t="s2p">طراحی سیستم‌های PLC، کنترل فرآیند، مانیتورینگ و یکپارچه‌سازی تجهیزات صنعتی.</p><a href="#contact" data-t="more">جزئیات بیشتر ↗</a></article>
+      <article class="card"><div class="icon">◎</div><span class="num">03</span><h3 data-t="s3">انرژی و بهینه‌سازی</h3><p data-t="s3p">پایش مصرف، اصلاح ضریب توان، کاهش تلفات و ارائه راهکارهای بهبود بهره‌وری انرژی.</p><a href="#contact" data-t="more">جزئیات بیشتر ↗</a></article>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap whyGrid">
+    <div><span class="kicker" data-t="whyK">چرا ARC VOLT</span><h2 data-t="whyTitle">تصمیم‌های مهندسی که هزینه‌های آینده را کم می‌کنند.</h2><p data-t="whyP">هر پروژه بر اساس نیاز واقعی، استانداردهای فنی و قابلیت نگهداری در آینده طراحی می‌شود؛ نه فقط برای تحویل امروز.</p>
+      <div class="list">
+        <div class="item"><span class="check">✓</span><div><b data-t="f1">طراحی مبتنی بر استاندارد</b><small data-t="f1p">مستندسازی و اجرای منطبق با الزامات پروژه.</small></div></div>
+        <div class="item"><span class="check">✓</span><div><b data-t="f2">پاسخ‌گویی و شفافیت</b><small data-t="f2p">گزارش مرحله‌ای و مسیر روشن از شروع تا تحویل.</small></div></div>
+        <div class="item"><span class="check">✓</span><div><b data-t="f3">نگاه بلندمدت</b><small data-t="f3p">طراحی برای تعمیرپذیری، توسعه و کاهش توقف سیستم.</small></div></div>
+      </div>
+    </div>
+    <div class="quality"><div class="ring"><div class="ringIn"><b>98%</b><span data-t="quality">شاخص کیفیت اجرا</span></div></div></div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="head"><div><span class="kicker" data-t="processK">فرآیند همکاری</span><h2 data-t="processTitle">از نیازسنجی تا راه‌اندازی، مرحله به مرحله.</h2></div></div>
+    <div class="steps">
+      <article class="step"><span>01</span><h3 data-t="p1">نیازسنجی</h3><p data-t="p1p">بررسی هدف، محدودیت‌ها و شرایط فنی پروژه.</p></article>
+      <article class="step"><span>02</span><h3 data-t="p2">طراحی</h3><p data-t="p2p">طراحی فنی، انتخاب تجهیزات و مستندات اجرایی.</p></article>
+      <article class="step"><span>03</span><h3 data-t="p3">اجرا</h3><p data-t="p3p">پیاده‌سازی کنترل‌شده با گزارش پیشرفت مرحله‌ای.</p></article>
+      <article class="step"><span>04</span><h3 data-t="p4">تست و تحویل</h3><p data-t="p4p">راه‌اندازی، تست عملکرد و تحویل مستندات نهایی.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="insights" id="insights">
+  <div class="wrap">
+    <div class="head"><div><span class="kicker" data-t="insightK">دانش فنی</span><h2 data-t="insightTitle">محتوایی که به تصمیم بهتر کمک می‌کند.</h2></div></div>
+    <div class="posts">
+      <article class="post"><div class="thumb">PF</div><small data-t="cat1">بهره‌وری انرژی</small><h3 data-t="b1">اصلاح ضریب توان چه زمانی واقعاً ضروری است؟</h3><p data-t="b1p">نگاهی کاربردی به نشانه‌ها، هزینه‌ها و مزایای اصلاح ضریب توان.</p></article>
+      <article class="post"><div class="thumb">PLC</div><small data-t="cat2">اتوماسیون</small><h3 data-t="b2">۵ نکته مهم پیش از انتخاب PLC برای پروژه</h3><p data-t="b2p">از ظرفیت I/O تا توسعه‌پذیری؛ معیارهای یک انتخاب آینده‌دار.</p></article>
+      <article class="post"><div class="thumb">HSE</div><small data-t="cat3">ایمنی</small><h3 data-t="b3">چک‌لیست پایه ایمنی تابلو برق صنعتی</h3><p data-t="b3p">نکات پایه‌ای که پیش از راه‌اندازی و تحویل باید بررسی شوند.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contactBox">
+    <div><span class="kicker" data-t="contactK">شروع همکاری</span><h2 data-t="contactTitle">پروژه بعدی شما می‌تواند از یک گفت‌وگوی فنی شروع شود.</h2><p data-t="contactP">برای بررسی نیاز پروژه، برآورد اولیه و پیشنهاد مسیر اجرا با ما در ارتباط باشید.</p></div>
+    <form class="form" onsubmit="return false"><div class="row"><label><span data-t="name">نام و نام خانوادگی</span><input placeholder="مثلاً علی محمدی"></label><label><span data-t="phone">شماره تماس</span><input placeholder="09..."></label></div><label><span data-t="type">نوع پروژه</span><select><option data-t="o1">برق صنعتی و ساختمانی</option><option data-t="o2">اتوماسیون و کنترل</option><option data-t="o3">بهینه‌سازی انرژی</option></select></label><label><span data-t="msg">توضیح کوتاه</span><textarea rows="4" placeholder="درباره پروژه بنویسید..."></textarea></label><button class="btn primary" data-t="send">ارسال درخواست</button><small data-t="disabled">فرم در این نسخه نمایشی غیرفعال است.</small></form>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap foot"><a class="brand" href="#top"><span class="mark">ϟ</span><span><b>ARC VOLT</b><small data-t="sub">مهندسی برق و اتوماسیون</small></span></a><p data-t="footP">طراحی، اجرا و بهینه‌سازی راهکارهای مهندسی برق برای پروژه‌های صنعتی و ساختمانی.</p><div class="footLinks"><a href="#services" data-t="services">خدمات</a><a href="#process" data-t="process">فرآیند همکاری</a><a href="#insights" data-t="blog">دانش فنی</a><a href="#contact" data-t="contact">تماس</a></div></div><div class="wrap copy"><span>© 2026 ARC VOLT — Concept Demo</span><span data-t="note">نمونه اولیه جهت نمایش سبک طراحی و ساختار پیشنهادی</span></div></footer>
+
+<script>
+const en={
+sub:"Electrical Engineering & Automation",services:"Services",why:"Why us",process:"Process",blog:"Insights",contact:"Contact",consult:"Request consultation",
+eyebrow:"Electrical solutions for precise, dependable projects",title:'Electrical engineering,<br><span>from design to reliable delivery.</span>',lead:"Design, implementation and optimization of industrial and building electrical systems with a focus on safety, reliability and long-term performance.",start:"Start a project",see:"Explore services",years:"Years of expertise",projects:"Projects delivered",support:"Technical support",load:"Live load",voltage:"Voltage",eff:"Efficiency",pf:"Power factor",for:"Solutions for",industry:"Industry",building:"Buildings",infra:"Infrastructure",automation:"Automation",energy:"Energy",
+expertise:"Core expertise",serviceTitle:"Integrated electrical engineering services built to scale",serviceIntro:"From early studies and engineering design to implementation, commissioning and maintenance — a structured path to reduce risk and improve quality.",s1:"Industrial & building electrical",s1p:"Panels, distribution, lighting, grounding, protection and electrical infrastructure.",s2:"Automation & control",s2p:"PLC systems, process control, monitoring and industrial equipment integration.",s3:"Energy optimization",s3p:"Consumption monitoring, power factor correction, loss reduction and efficiency improvements.",more:"Learn more ↗",
+whyK:"Why ARC VOLT",whyTitle:"Engineering decisions that reduce tomorrow's costs.",whyP:"Each project is designed around real needs, technical standards and long-term maintainability — not only today's delivery.",f1:"Standards-driven design",f1p:"Engineering and documentation aligned with project requirements.",f2:"Clear communication",f2p:"Stage-by-stage reporting and a transparent delivery path.",f3:"Long-term thinking",f3p:"Designed for maintainability, expansion and reduced downtime.",quality:"Execution quality index",
+processK:"How we work",processTitle:"From discovery to commissioning, step by step.",p1:"Discovery",p1p:"Understanding goals, constraints and technical conditions.",p2:"Engineering",p2p:"Technical design, equipment selection and implementation docs.",p3:"Execution",p3p:"Controlled implementation with milestone-based reporting.",p4:"Test & handover",p4p:"Commissioning, performance testing and final documentation.",
+insightK:"Technical insights",insightTitle:"Content that helps teams make better decisions.",cat1:"Energy efficiency",b1:"When is power factor correction actually necessary?",b1p:"A practical look at the signs, costs and benefits of power factor correction.",cat2:"Automation",b2:"5 things to check before choosing a PLC",b2p:"From I/O capacity to scalability — criteria behind a future-proof choice.",cat3:"Safety",b3:"A basic industrial panel safety checklist",b3p:"Key points to verify before commissioning and handover.",
+contactK:"Start a conversation",contactTitle:"Your next project can begin with one technical conversation.",contactP:"Contact us for an initial review, early estimate and a practical execution approach.",name:"Full name",phone:"Phone",type:"Project type",o1:"Industrial & building electrical",o2:"Automation & control",o3:"Energy optimization",msg:"Short description",send:"Send request",disabled:"This form is disabled in the concept demo.",footP:"Design, implementation and optimization of electrical engineering solutions for industrial and building projects.",note:"Concept preview showing the proposed visual direction and site structure"
+};
+const fa={};document.querySelectorAll("[data-t]").forEach(x=>fa[x.dataset.t]=x.textContent);document.querySelectorAll("[data-html]").forEach(x=>fa[x.dataset.html]=x.innerHTML);
+let l="fa";document.getElementById("lang").onclick=()=>{l=l==="fa"?"en":"fa";document.documentElement.dir=l==="fa"?"rtl":"ltr";document.documentElement.lang=l;document.body.classList.toggle("en",l==="en");document.getElementById("lang").textContent=l==="fa"?"EN":"FA";document.querySelectorAll("[data-t]").forEach(x=>{let k=x.dataset.t;x.textContent=(l==="fa"?fa:en)[k]||x.textContent});document.querySelectorAll("[data-html]").forEach(x=>{let k=x.dataset.html;x.innerHTML=(l==="fa"?fa:en)[k]||x.innerHTML})};
+</script>
+</body></html>
