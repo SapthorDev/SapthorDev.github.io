@@ -1,457 +1,181 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#08090c" />
-  <title>Relay — AI Agent Concept by Sapthor</title>
-  <meta name="description" content="Relay is a Sapthor concept for an AI agent that researches, plans, executes and reports back from one clear workspace." />
-  <style>
-    :root{
-      --bg:#08090c;--bg2:#0c0f16;--panel:#11151d;--panel2:#151a24;--panel3:#0d1118;
-      --text:#f4f6f8;--muted:#8f98aa;--line:#242b39;--line2:#30394a;
-      --accent:#82f7cf;--accent2:#8a9cff;--cyan:#67d9ff;--violet:#9b7cff;
-      --shadow:0 32px 90px rgba(0,0,0,.42);--radius:24px;
-      --mx:50%;--my:20%;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;color:var(--text);background:
-      radial-gradient(900px circle at var(--mx) var(--my),rgba(103,217,255,.08),transparent 46%),
-      radial-gradient(720px circle at 78% 18%,rgba(155,124,255,.08),transparent 44%),
-      linear-gradient(180deg,var(--bg),var(--bg2));
-      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      line-height:1.55;overflow-x:hidden;
-    }
-    body:before{
-      content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.18;
-      background-image:
-        linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
-      background-size:48px 48px;
-      mask-image:linear-gradient(to bottom,black,transparent 75%);
-    }
-    ::selection{background:var(--accent);color:#06100d}
-    a{color:inherit;text-decoration:none}
-    button{font:inherit}
-    .wrap{width:min(1180px,calc(100% - 36px));margin:auto}
-    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-    .nav{
-      position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(255,255,255,.06);
-      background:rgba(8,9,12,.72);backdrop-filter:blur(18px)
-    }
-    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-    .brand{display:flex;align-items:center;gap:11px;font-weight:850;letter-spacing:-.5px}
-    .mark{
-      width:34px;height:34px;border:1px solid var(--line);border-radius:10px;display:grid;place-items:center;
-      background:linear-gradient(145deg,var(--panel2),var(--panel));position:relative;overflow:hidden
-    }
-    .mark:before,.mark:after{
-      content:"";position:absolute;width:15px;height:2px;border-radius:99px;background:var(--accent);transform:rotate(45deg)
-    }
-    .mark:after{background:var(--accent2);transform:rotate(-45deg)}
-    .brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:1.4px;text-transform:uppercase;margin-top:-2px}
-    .nav-actions{display:flex;align-items:center;gap:8px}
-    .nav-link,.nav-cta{padding:9px 12px;border-radius:12px;border:1px solid transparent;color:var(--muted);font-size:13px}
-    .nav-link:hover{color:var(--text);border-color:var(--line);background:rgba(255,255,255,.025)}
-    .nav-cta{border-color:var(--line);background:var(--panel);color:var(--text);font-weight:800}
-
-    .hero{min-height:calc(100svh - 72px);display:grid;grid-template-columns:1.02fr .98fr;gap:58px;align-items:center;padding:74px 0 84px}
-    .eyebrow{display:flex;align-items:center;gap:10px;color:var(--accent);font-size:11px;letter-spacing:1.5px;text-transform:uppercase}
-    .eyebrow:before{content:"";width:24px;height:1px;background:currentColor}
-    h1{font-size:clamp(58px,8.5vw,112px);line-height:.91;letter-spacing:-6px;margin:16px 0 24px;max-width:780px}
-    .grad{
-      background:linear-gradient(100deg,var(--text) 5%,var(--cyan) 48%,var(--violet) 90%);
-      -webkit-background-clip:text;background-clip:text;color:transparent
-    }
-    .hero-copy{font-size:19px;color:var(--muted);max-width:680px;margin:0 0 28px}
-    .hero-copy b{color:var(--text)}
-    .hero-buttons{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{
-      display:inline-flex;align-items:center;gap:10px;padding:14px 18px;border-radius:14px;border:1px solid var(--line);
-      font-weight:850;transition:.22s transform,.22s border-color,.22s background
-    }
-    .btn:hover{transform:translateY(-3px);border-color:var(--line2)}
-    .btn.primary{background:var(--text);color:#090b10;border-color:var(--text)}
-    .btn.secondary{background:rgba(255,255,255,.025)}
-    .hero-meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:28px;color:var(--muted);font-size:11px}
-    .hero-meta span:before{content:"↳";color:var(--accent);margin-right:7px}
-
-    .agent-stage{position:relative;min-height:560px;display:grid;place-items:center;perspective:1200px}
-    .orb-wrap{
-      width:min(480px,42vw);aspect-ratio:1;position:relative;display:grid;place-items:center;transform-style:preserve-3d;
-      filter:drop-shadow(0 30px 60px rgba(0,0,0,.38))
-    }
-    .orb-halo,.orb-halo:before,.orb-halo:after{
-      content:"";position:absolute;border-radius:50%;inset:8%;border:1px solid rgba(130,247,207,.22);
-      box-shadow:0 0 60px rgba(103,217,255,.08)
-    }
-    .orb-halo:before{inset:10%;border-color:rgba(138,156,255,.23);transform:rotate(60deg) scale(.84)}
-    .orb-halo:after{inset:18%;border-style:dashed;border-color:rgba(255,255,255,.1);animation:spin 18s linear infinite}
-    @keyframes spin{to{transform:rotate(360deg)}}
-    .orb{
-      width:44%;aspect-ratio:1;border-radius:50%;
-      background:
-        radial-gradient(circle at 35% 28%,rgba(255,255,255,.98),rgba(130,247,207,.92) 13%,rgba(103,217,255,.82) 28%,rgba(138,156,255,.78) 48%,rgba(56,31,110,.88) 66%,rgba(8,9,12,.98) 79%);
-      box-shadow:
-        inset -18px -22px 32px rgba(0,0,0,.28),
-        0 0 70px rgba(103,217,255,.24),
-        0 0 130px rgba(138,156,255,.18);
-      position:relative;animation:breathe 4.8s ease-in-out infinite
-    }
-    .orb:after{
-      content:"";position:absolute;inset:-16%;border-radius:50%;
-      background:conic-gradient(from 0deg,transparent,rgba(130,247,207,.18),transparent,rgba(138,156,255,.18),transparent);
-      filter:blur(16px);animation:spin 9s linear infinite
-    }
-    @keyframes breathe{50%{transform:scale(1.045);filter:brightness(1.08)}}
-    .step{
-      position:absolute;min-width:145px;padding:12px 14px;border:1px solid var(--line);border-radius:14px;
-      background:rgba(16,19,26,.82);backdrop-filter:blur(14px);box-shadow:var(--shadow)
-    }
-    .step b{display:block;font-size:11px;margin-bottom:3px}.step span{font-size:10px;color:var(--muted)}
-    .step:after{content:"";position:absolute;width:58px;height:1px;background:linear-gradient(90deg,var(--accent),transparent);top:50%}
-    .s1{left:-4%;top:14%}.s1:after{left:100%}
-    .s2{right:-4%;top:27%}.s2:after{right:100%;transform:rotate(180deg)}
-    .s3{left:2%;bottom:22%}.s3:after{left:100%}
-    .s4{right:1%;bottom:12%}.s4:after{right:100%;transform:rotate(180deg)}
-    .status{
-      position:absolute;bottom:2%;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:8px;
-      padding:8px 11px;border:1px solid var(--line);border-radius:999px;background:rgba(13,17,24,.82);font-size:10px;color:var(--muted)
-    }
-    .status i{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px var(--accent);animation:pulse 1.8s infinite}
-    @keyframes pulse{50%{opacity:.35;transform:scale(.76)}}
-
-    section{padding:100px 0}
-    .section-head{display:grid;grid-template-columns:.75fr 1.25fr;gap:28px;align-items:end;margin-bottom:36px}
-    .section-title{font-size:clamp(38px,5.3vw,66px);line-height:.98;letter-spacing:-3.2px;margin:8px 0 0}
-    .section-copy{color:var(--muted);font-size:17px;max-width:710px;margin:0}
-
-    .product-shell{
-      border:1px solid var(--line);border-radius:28px;overflow:hidden;
-      background:linear-gradient(145deg,rgba(17,21,29,.96),rgba(12,15,22,.96));box-shadow:var(--shadow)
-    }
-    .shell-top{height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;border-bottom:1px solid var(--line)}
-    .dots{display:flex;gap:6px}.dots i{width:8px;height:8px;border-radius:50%;background:var(--line2)}
-    .shell-title{font-size:10px;color:var(--muted);letter-spacing:1.1px}
-    .shell-body{display:grid;grid-template-columns:210px 1fr;min-height:520px}
-    .sidebar{border-right:1px solid var(--line);padding:20px 14px;background:rgba(8,10,15,.34)}
-    .side-brand{font-weight:900;margin:0 8px 20px}.side-brand span{color:var(--accent)}
-    .side-link{
-      display:flex;align-items:center;gap:10px;padding:10px 11px;border-radius:11px;color:var(--muted);font-size:12px;margin-bottom:4px
-    }
-    .side-link.active{background:rgba(130,247,207,.08);color:var(--text);border:1px solid rgba(130,247,207,.16)}
-    .side-icon{width:7px;height:7px;border-radius:50%;background:currentColor}
-    .workspace{padding:24px}
-    .workspace-top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:20px}
-    .workspace-top h3{font-size:27px;letter-spacing:-1.1px;margin:0}.workspace-top p{font-size:12px;color:var(--muted);margin:4px 0 0}
-    .workspace-badge{padding:8px 10px;border:1px solid rgba(130,247,207,.18);border-radius:999px;color:var(--accent);font-size:10px;background:rgba(130,247,207,.05)}
-    .dashboard-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:14px}
-    .card{border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.018);padding:17px;min-height:160px;position:relative;overflow:hidden}
-    .card h4{margin:0 0 6px;font-size:14px}.card p{margin:0;color:var(--muted);font-size:11px}
-    .task-card{grid-row:span 2}
-    .task{
-      margin-top:18px;padding:13px;border:1px solid var(--line);border-radius:14px;background:var(--panel3)
-    }
-    .task-top{display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:11px}
-    .task-top span{color:var(--accent)}
-    .progress{height:6px;border-radius:999px;background:#0b0e14;margin-top:12px;overflow:hidden}
-    .progress i{display:block;height:100%;width:74%;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent2));animation:progress 4.8s ease-in-out infinite alternate}
-    @keyframes progress{to{width:92%}}
-    .mini-list{display:grid;gap:8px;margin-top:14px}
-    .mini-list div{display:flex;justify-content:space-between;gap:12px;padding:9px 10px;border:1px solid var(--line);border-radius:11px;font-size:10px}
-    .mini-list span{color:var(--muted)}
-    .summary-bars{display:grid;gap:9px;margin-top:16px}.summary-bars i{display:block;height:8px;border-radius:999px;background:linear-gradient(90deg,rgba(138,156,255,.5),rgba(130,247,207,.14))}
-    .summary-bars i:nth-child(2){width:76%}.summary-bars i:nth-child(3){width:54%}
-    .activity{display:flex;align-items:flex-end;gap:7px;height:80px;margin-top:18px}
-    .activity i{flex:1;border-radius:8px 8px 2px 2px;background:linear-gradient(var(--accent2),rgba(138,156,255,.12));min-height:20%;animation:bars 3.5s ease-in-out infinite alternate}
-    .activity i:nth-child(2){height:44%}.activity i:nth-child(3){height:72%}.activity i:nth-child(4){height:56%}.activity i:nth-child(5){height:88%}.activity i:nth-child(6){height:66%}
-    @keyframes bars{to{filter:brightness(1.22);transform:translateY(-3px)}}
-
-    .flow-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-    .flow-card{
-      border:1px solid var(--line);border-radius:21px;padding:22px;background:linear-gradient(145deg,var(--panel),var(--panel2));min-height:240px;position:relative
-    }
-    .flow-num{font-size:10px;color:var(--accent);letter-spacing:1.4px}.flow-card h3{font-size:22px;margin:42px 0 9px;letter-spacing:-.7px}.flow-card p{font-size:13px;color:var(--muted);margin:0}
-    .flow-card:after{content:"→";position:absolute;right:-18px;top:50%;color:var(--line2);z-index:2}
-    .flow-card:last-child:after{display:none}
-
-    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .feature{border-top:1px solid var(--line);padding:24px 8px 10px;min-height:190px}
-    .feature .icon{
-      width:38px;height:38px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;
-      background:linear-gradient(145deg,var(--panel2),var(--panel));color:var(--accent);margin-bottom:30px
-    }
-    .feature h3{font-size:22px;letter-spacing:-.7px;margin:0 0 8px}.feature p{color:var(--muted);font-size:14px;margin:0}
-
-    .cta{
-      border:1px solid var(--line);border-radius:30px;padding:44px;position:relative;overflow:hidden;
-      background:
-        radial-gradient(420px circle at 85% 20%,rgba(138,156,255,.16),transparent 64%),
-        radial-gradient(360px circle at 10% 90%,rgba(130,247,207,.10),transparent 62%),
-        linear-gradient(145deg,var(--panel),var(--panel2))
-    }
-    .cta h2{font-size:clamp(42px,6vw,76px);line-height:.96;letter-spacing:-3.6px;margin:10px 0 15px;max-width:850px}
-    .cta p{color:var(--muted);max-width:690px;font-size:16px}
-    .concept-note{margin-top:18px;color:var(--muted);font-size:10px}
-    footer{border-top:1px solid var(--line);padding:27px 0 42px;color:var(--muted);font-size:10px}
-    .footer-row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-
-    @media(max-width:980px){
-      .hero{grid-template-columns:1fr;padding-top:58px}
-      .agent-stage{min-height:500px}
-      .orb-wrap{width:min(500px,78vw)}
-      .section-head{grid-template-columns:1fr}
-      .shell-body{grid-template-columns:170px 1fr}
-      .dashboard-grid{grid-template-columns:1fr}
-      .task-card{grid-row:auto}
-      .flow-grid{grid-template-columns:1fr 1fr}
-      .flow-card:nth-child(2):after{display:none}
-      .features{grid-template-columns:1fr}
-    }
-    @media(max-width:700px){
-      .wrap{width:min(100% - 26px,1180px)}
-      .nav-inner{height:64px}
-      .nav-link{display:none}
-      .hero{min-height:auto;padding:52px 0 62px}
-      h1{font-size:56px;letter-spacing:-3.5px}
-      .hero-copy{font-size:16px}
-      .agent-stage{min-height:430px}
-      .orb-wrap{width:min(390px,94vw)}
-      .step{min-width:118px;padding:9px 10px}.step b{font-size:9px}.step span{font-size:8px}.step:after{width:32px}
-      section{padding:72px 0}
-      .section-title{letter-spacing:-2.2px}
-      .product-shell{border-radius:22px}
-      .shell-body{display:block;min-height:0}
-      .sidebar{display:flex;overflow:auto;border-right:0;border-bottom:1px solid var(--line);padding:10px}
-      .side-brand{margin:auto 12px auto 3px;white-space:nowrap}
-      .side-link{white-space:nowrap;margin:0}
-      .workspace{padding:16px}
-      .workspace-top{align-items:flex-start}
-      .workspace-top h3{font-size:22px}
-      .flow-grid{grid-template-columns:1fr}
-      .flow-card:after{display:none}
-      .cta{padding:28px 22px}
-    }
-    @media(max-width:430px){
-      h1{font-size:47px;letter-spacing:-2.7px}
-      .hero-buttons{display:grid}.btn{justify-content:center}
-      .agent-stage{min-height:390px}
-      .step{min-width:106px}
-      .s1{left:-2%;top:12%}.s2{right:-2%;top:28%}.s3{left:0;bottom:24%}.s4{right:-1%;bottom:12%}
-      .workspace-badge{display:none}
-    }
-    @media(prefers-reduced-motion:reduce){
-      *,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}
-    }
-  </style>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f7f7f2"><title>Relay — Delegate the work. Keep the control.</title><meta name="description" content="A concept for visible, controllable AI work. Try Relay’s interactive workspace."><link rel="stylesheet" href="relay.css"><script src="relay.js" defer></script>
 </head>
-<body>
-  <header class="nav">
-    <div class="wrap nav-inner">
-      <a class="brand" href="../">
-        <span class="mark" aria-hidden="true"></span>
-        <span>Relay<small>Concept by Sapthor</small></span>
-      </a>
-      <div class="nav-actions">
-        <a class="nav-link" href="#product">Product</a>
-        <a class="nav-link" href="#flow">How it works</a>
-        <a class="nav-cta" href="../">Sapthor Dev ↗</a>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <div class="wrap">
-      <section class="hero">
-        <div>
-          <div class="eyebrow mono">AI agent concept / built by Sapthor</div>
-          <h1>Your AI agent for <span class="grad">real work.</span></h1>
-          <p class="hero-copy">Relay is a concept for an AI agent that can <b>understand a goal, build a plan, execute repetitive digital work and report back clearly</b> — without turning the experience into another complicated dashboard.</p>
-          <div class="hero-buttons">
-            <a class="btn primary" href="#product">Explore the concept <span>↓</span></a>
-            <a class="btn secondary" href="../#contact">Build something with Sapthor <span>↗</span></a>
-          </div>
-          <div class="hero-meta mono">
-            <span>Research</span><span>Planning</span><span>Execution</span><span>Human control</span>
-          </div>
-        </div>
-
-        <div class="agent-stage" id="agentStage" aria-label="Relay workflow visualization">
-          <div class="orb-wrap" id="orbWrap">
-            <div class="orb-halo"></div>
-            <div class="orb"></div>
-            <div class="step s1"><b>01 / Understand</b><span>Turn a goal into context.</span></div>
-            <div class="step s2"><b>02 / Plan</b><span>Break it into actions.</span></div>
-            <div class="step s3"><b>03 / Execute</b><span>Handle the busywork.</span></div>
-            <div class="step s4"><b>04 / Report</b><span>Show what changed.</span></div>
-            <div class="status mono"><i></i><span>RELAY / ACTIVE</span></div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <section id="product">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow mono">01 / One clear workspace</div>
-            <h2 class="section-title">See the work.<br>Not the noise.</h2>
-          </div>
-          <p class="section-copy">The interface is designed around confidence. You can see what Relay understood, what it plans to do, what is running now and what changed after execution.</p>
-        </div>
-
-        <div class="product-shell">
-          <div class="shell-top">
-            <div class="dots"><i></i><i></i><i></i></div>
-            <div class="shell-title mono">RELAY WORKSPACE / CONCEPT UI</div>
-            <div class="shell-title mono">LIVE</div>
-          </div>
-          <div class="shell-body">
-            <aside class="sidebar">
-              <div class="side-brand">Relay<span>.</span></div>
-              <div class="side-link active"><i class="side-icon"></i> Overview</div>
-              <div class="side-link"><i class="side-icon"></i> Tasks</div>
-              <div class="side-link"><i class="side-icon"></i> Research</div>
-              <div class="side-link"><i class="side-icon"></i> Automations</div>
-              <div class="side-link"><i class="side-icon"></i> Activity</div>
-            </aside>
-            <div class="workspace">
-              <div class="workspace-top">
-                <div>
-                  <h3>Launch research sprint</h3>
-                  <p>Competitive scan · positioning notes · summary</p>
-                </div>
-                <div class="workspace-badge mono">AGENT RUNNING</div>
-              </div>
-
-              <div class="dashboard-grid">
-                <article class="card task-card">
-                  <h4>Current task</h4>
-                  <p>Research 12 competitors and extract positioning patterns.</p>
-                  <div class="task">
-                    <div class="task-top"><b>Competitive landscape</b><span>74%</span></div>
-                    <div class="progress"><i></i></div>
-                  </div>
-                  <div class="mini-list">
-                    <div><b>Sources reviewed</b><span>28 / 36</span></div>
-                    <div><b>Patterns found</b><span>11</span></div>
-                    <div><b>Questions for you</b><span>2</span></div>
-                    <div><b>Actions blocked</b><span>0</span></div>
-                  </div>
-                </article>
-
-                <article class="card">
-                  <h4>Research summary</h4>
-                  <p>Relay compresses the useful signal before it asks for your attention.</p>
-                  <div class="summary-bars"><i></i><i></i><i></i></div>
-                </article>
-
-                <article class="card">
-                  <h4>Execution activity</h4>
-                  <p>Every action stays visible and reviewable.</p>
-                  <div class="activity"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-                </article>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="flow">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow mono">02 / Agent loop</div>
-            <h2 class="section-title">Four steps.<br>One mental model.</h2>
-          </div>
-          <p class="section-copy">A good agent product should make autonomy feel understandable. Relay keeps the entire loop legible instead of hiding everything behind a single chat box.</p>
-        </div>
-
-        <div class="flow-grid">
-          <article class="flow-card"><div class="flow-num mono">01 / UNDERSTAND</div><h3>Start with the goal.</h3><p>Relay identifies the outcome, context, constraints and missing information before taking action.</p></article>
-          <article class="flow-card"><div class="flow-num mono">02 / PLAN</div><h3>Make the path visible.</h3><p>The goal becomes a short plan with clear actions, dependencies and moments that need human approval.</p></article>
-          <article class="flow-card"><div class="flow-num mono">03 / EXECUTE</div><h3>Handle the repetitive work.</h3><p>Relay works through the plan while keeping progress, blockers and actions visible in the workspace.</p></article>
-          <article class="flow-card"><div class="flow-num mono">04 / REPORT</div><h3>Return with clarity.</h3><p>You get the result, what changed, what still needs attention and the evidence behind the work.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow mono">03 / Product principles</div>
-            <h2 class="section-title">Useful autonomy.<br>Visible control.</h2>
-          </div>
-          <p class="section-copy">This concept focuses on the parts of agent UX that matter after the first demo: speed, repetitive execution and confidence that the system is doing what you intended.</p>
-        </div>
-
-        <div class="features">
-          <article class="feature"><div class="icon mono">R</div><h3>Research faster</h3><p>Collect and compress information into the decisions that actually matter instead of another pile of tabs.</p></article>
-          <article class="feature"><div class="icon mono">A</div><h3>Automate busywork</h3><p>Move repetitive digital tasks out of your day while preserving enough visibility to trust the workflow.</p></article>
-          <article class="feature"><div class="icon mono">C</div><h3>Stay in control</h3><p>Plans, progress, approvals and results remain visible so autonomy never has to mean ambiguity.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <div class="wrap">
-      <section class="cta">
-        <div class="eyebrow mono">Concept project / Sapthor Dev</div>
-        <h2>I design the interface.<br>I build the experience.</h2>
-        <p>Relay is a fictional product concept built to explore how an AI-agent landing page and product interface can explain autonomy clearly. Need a landing page, full website or product UI that feels this intentional?</p>
-        <div class="hero-buttons">
-          <a class="btn primary" href="../#contact">Start a project with Sapthor <span>↗</span></a>
-          <a class="btn secondary" href="../#proof">Get a free website audit <span>↗</span></a>
-        </div>
-        <div class="concept-note mono">RELAY IS A FICTIONAL CONCEPT PRODUCT · DESIGNED & BUILT BY SAPTHOR DEV</div>
-      </section>
-    </div>
-  </main>
-
-  <footer>
-    <div class="wrap footer-row mono">
-      <span>© 2026 SAPTHOR DEV</span>
-      <span>RELAY / CONCEPT PRODUCT / DESIGN + FRONTEND</span>
-    </div>
-  </footer>
-
-  <script>
-    const root=document.documentElement;
-    const stage=document.getElementById('agentStage');
-    const orb=document.getElementById('orbWrap');
-    const fine=window.matchMedia('(pointer:fine)').matches && !window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-    let tx=0,ty=0,rx=0,ry=0;
-
-    window.addEventListener('mousemove',e=>{
-      root.style.setProperty('--mx',(e.clientX/window.innerWidth*100)+'%');
-      root.style.setProperty('--my',(e.clientY/window.innerHeight*100)+'%');
-      if(!fine||!stage)return;
-      const r=stage.getBoundingClientRect();
-      const x=Math.max(-1,Math.min(1,(e.clientX-(r.left+r.width/2))/(r.width/2)));
-      const y=Math.max(-1,Math.min(1,(e.clientY-(r.top+r.height/2))/(r.height/2)));
-      tx=x*8;ty=y*5;
-    });
-
-    function animate(){
-      rx+=(tx-rx)*.08;ry+=(ty-ry)*.08;
-      if(orb)orb.style.transform='translate3d('+rx.toFixed(2)+'px,'+ry.toFixed(2)+'px,0) rotateX('+(-ry*.25).toFixed(2)+'deg) rotateY('+(rx*.28).toFixed(2)+'deg)';
-      requestAnimationFrame(animate);
-    }
-    if(fine)requestAnimationFrame(animate);
-
-    document.querySelectorAll('.flow-card,.feature,.card').forEach(el=>{
-      el.addEventListener('mousemove',e=>{
-        if(!fine)return;
-        const r=el.getBoundingClientRect();
-        const x=(e.clientX-r.left)/r.width-.5;
-        const y=(e.clientY-r.top)/r.height-.5;
-        el.style.transform='perspective(900px) rotateX('+(-y*2)+'deg) rotateY('+(x*2)+'deg) translateY(-2px)';
-      });
-      el.addEventListener('mouseleave',()=>el.style.transform='');
-    });
-  </script>
+<body><a class="skip" href="#main">Skip to content</a>
+<header class="wrap nav"><a class="brand" href="#main"><i>↗</i>relay.</a>
+<nav aria-label="Main navigation"><a href="#workspace">Workspace</a><a href="#use-cases">Use cases</a><a href="#control">Human control</a>
+</nav><span class="mono concept">PRODUCT CONCEPT <i class="dot"></i></span>
+</header>
+<main id="main">
+<section class="wrap hero">
+<div>
+<p class="eyebrow">— THE WORK MOVES. YOU DECIDE.
+</p>
+<h1>Delegate the work.<br><span>Keep the control.</span>
+</h1>
+<p class="intro">Relay researches, plans and executes multi-step digital work — while showing you exactly what it’s doing.
+</p>
+<div class="actions"><button class="primary" data-start>Start a task ↗</button><button data-watch>▶ &nbsp; Watch Relay work</button>
+</div>
+<p class="caption">An interactive product concept. Try the workflow below.
+</p>
+</div>
+<aside class="hero-note"><span class="mono">01 — 05</span>
+<div class="mini-rail">● — ○ — ○ — ○ — ○
+</div>
+<p>From a single request<br>to a considered result.
+</p><small class="mono">EVERY STEP, IN SIGHT ↘</small>
+</aside>
+</section>
+<section class="wrap" id="workspace" aria-label="Interactive Relay workspace">
+<div class="demo-label mono"><span><i class="dot"></i> YOUR WORKSPACE, IN MOTION</span><span>ILLUSTRATIVE DATA / NO EXTERNAL ACTIONS</span>
+</div>
+<div class="workspace">
+<div class="bar"><span><b>↗</b> Acme workspace <em>/</em> Research sprint</span><span class="avatar">JD</span>
+</div>
+<div class="dashboard">
+<aside class="tasks">
+<div class="side-title">Tasks <small>03</small>
+</div>
+<div class="task-options" role="group" aria-label="Example tasks"><button data-case="market" aria-pressed="true">↗ <span>Market landscape<small>10 competitors · positioning</small></span></button><button data-case="content" aria-pressed="false">≡ <span>Content pipeline<small>One brief · three channels</small></span></button><button data-case="intel" aria-pressed="false">◎ <span>Competitor watch<small>Changes · evidence · impact</small></span></button>
+</div>
+<div class="owner"><span class="avatar">JD</span><span>Jamie Davis<small>Workspace owner</small></span><i class="dot"></i>
+</div>
+</aside>
+<article class="detail">
+<div class="meta mono"><span id="task-id"></span><span class="badge" id="state"></span>
+</div>
+<h2 id="task-title">
+</h2>
+<p class="context" id="context">
+</p>
+<div class="progress-label"><span id="progress-label"></span><span id="percent"></span>
+</div>
+<div class="progress" role="progressbar" aria-label="Task progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="fill"></i>
+</div>
+<ol class="stages">
+<li>Understand
+</li>
+<li>Plan
+</li>
+<li>Execute
+</li>
+<li>Review
+</li>
+<li>Result
+</li>
+</ol>
+<div id="panel" class="panel">
+</div>
+<div class="run-actions"><button id="run" class="primary"></button><button id="reset" class="text-button">Reset demo ↺</button><small id="run-note"></small>
+</div>
+<p id="announcement" class="sr-only" role="status" aria-live="polite">
+</p>
+</article>
+<aside class="evidence">
+<div class="side-title">Activity / Evidence <small>↗</small>
+</div>
+<p id="count" class="mono">
+</p>
+<ol id="activity">
+</ol>
+<div class="sources">
+<p class="eyebrow">SOURCE TRAIL
+</p>
+<div id="sources">
+</div>
+</div>
+<p class="permission-note">▣ Public web only<small>External writes need approval.</small>
+</p>
+</aside>
+</div>
+</div>
+<noscript>
+<p>Enable JavaScript to try this demo: understand, plan, collect evidence, review and receive a report.
+</p>
+</noscript>
+<div class="workspace-foot"><span>Less busywork. More judgment.</span><span class="mono">YOU SET THE GOAL. RELAY CONNECTS THE STEPS.</span>
+</div>
+</section>
+<section class="wrap rail-section">
+<div class="section-heading">
+<div>
+<p class="eyebrow">01 / THE EXECUTION RAIL
+</p>
+<h2>No black box.<br>Just forward motion.
+</h2>
+</div>
+<p>One connected path from intention to output. Explore each step to see what happens — and where you stay in charge.
+</p>
+</div>
+<div class="rail" role="group" aria-label="Explore execution steps"><button data-rail="0" aria-pressed="true"><span>01</span><b>Request</b><small>The starting point</small></button><button data-rail="1" aria-pressed="false"><span>02</span><b>Plan</b><small>Scope before action</small></button><button data-rail="2" aria-pressed="false"><span>03</span><b>Browser</b><small>Follow the evidence</small></button><button data-rail="3" aria-pressed="false"><span>04</span><b>Analysis</b><small>Find the useful signal</small></button><button data-rail="4" aria-pressed="false"><span>05</span><b>Report</b><small>A result you can use</small></button>
+</div>
+<div class="rail-description"><span id="rail-label" class="mono"></span>
+<p id="rail-copy" aria-live="polite">
+</p><span>↗</span>
+</div>
+</section>
+<section id="use-cases" class="use-section">
+<div class="wrap">
+<div class="section-heading">
+<div>
+<p class="eyebrow">02 / BUILT AROUND THE OUTCOME
+</p>
+<h2>Different work.<br>Same clarity.
+</h2>
+</div>
+<p>Research a market. Shape a content pipeline. Keep an eye on the competition. Choose a workflow to load it into the workspace.
+</p>
+</div>
+<div class="use-grid"><button data-case="market" aria-pressed="true"><span class="case-top">01 <b>↗</b></span>
+<h3>Market research
+</h3>
+<p>Turn scattered sources into a focused positioning brief.
+</p><small>10 competitors → one clear direction</small></button><button data-case="content" aria-pressed="false"><span class="case-top">02 <b>↗</b></span>
+<h3>Content operations
+</h3>
+<p>Build a channel-ready content plan from one editorial brief.
+</p><small>One brief → three coordinated channels</small></button><button data-case="intel" aria-pressed="false"><span class="case-top">03 <b>↗</b></span>
+<h3>Competitive intelligence
+</h3>
+<p>Connect competitor changes to decisions worth making.
+</p><small>Six signals → a prioritized watchlist</small></button>
+</div>
+</div>
+</section>
+<section class="wrap control-section" id="control">
+<div>
+<p class="eyebrow">03 / HUMAN CONTROL
+</p>
+<h2>Autonomy with<br>a hand on the wheel.
+</h2>
+<p>You approve the moments that matter. Relay works inside the boundaries you set, with a record of every decision.
+</p><a href="#workspace" class="text-link">Try an approval in the workspace ↗</a>
+</div>
+<div class="permissions">
+<div class="permission-head">Task permissions <span class="badge">YOU DECIDE</span>
+</div>
+<div><span><b>Read public sources</b><small>Research and collect evidence</small></span><span class="allowed">Allowed <i class="dot"></i></span>
+</div>
+<div><span><b>Create a local draft</b><small>Keep results inside the workspace</small></span><span class="allowed">Allowed <i class="dot"></i></span>
+</div>
+<div><span><b>Share outside the workspace</b><small>Review recipients and scope first</small></span><span class="ask">Ask first ↗</span>
+</div>
+<div><span><b>Publish or spend money</b><small>Unavailable in this concept demo</small></span><span>Blocked −</span>
+</div>
+<p>Permissions are illustrative. This demo never connects to accounts or performs external actions.
+</p>
+</div>
+</section>
+<section class="wrap closing">
+<p class="eyebrow">LESS HANDOFF. MORE HEADWAY.
+</p>
+<h2>Give the work<br>a way forward.
+</h2><button class="primary" data-start>Start a task ↗</button>
+</section>
+</main>
+<footer class="wrap"><span class="brand">relay.</span><span>A concept designed &amp; built by Sapthor Dev</span><a href="#main">Back to top ↑</a>
+</footer>
 </body>
 </html>
